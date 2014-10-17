@@ -1,0 +1,1 @@
+Create index smarple1dmvLASTFIRSTNAME on smarple1dmv_person (LAST_NAME, FIRST_NAME);

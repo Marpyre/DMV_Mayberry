@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>smarple1.classProject</groupId>
+		<artifactId>smarple1DataShare</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	
+	<groupId>smarple1.classProject.smarple1Mayberry</groupId>
+	<artifactId>smarple1Mayberry</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	
+	<name>Smarple1 Mayberry</name>
+	<description>Smarple1 Mayberry Module</description>
+	
+	<modules>
+		<module>smarple1MayberryImpl</module>
+	</modules>
+	
+</project>

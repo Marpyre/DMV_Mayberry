@@ -1,0 +1,96 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>smarple1.classProject.smarple1Mayberry</groupId>
+		<artifactId>smarple1Mayberry</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>	smarple1.classProject.smarple1Mayberry.smarple1MayberryImpl</groupId>
+	<artifactId>smarple1MayberryImpl</artifactId>
+
+	<name>Smarple1 Mayberry Implementation</name>
+	<description>Smarple1 Mayberry Implementation Module</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+	</dependencies>
+	
+	<profiles>
+		<profile>
+			<id>testing</id>
+			<activation>
+				<property>
+					<name>!skipTests</name>
+				</property>
+			</activation>
+
+			<build>
+				<plugins>
+					<plugin>
+						<!-- runs schema against the DB -->
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>sql-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>drop-db-before-test</id>
+								<phase>process-test-classes</phase>
+								<goals>
+									<goal>execute</goal>
+								</goals>
+								<configuration>
+									<autocommit>true</autocommit>
+									<fileset>
+										<basedir>${basedir}/src</basedir>
+										<includes>
+											<include>main/resources/ddl/**/*drop*.ddl</include>
+										</includes>
+									</fileset>
+									<onError>continue</onError>
+								</configuration>
+							</execution>
+							<execution>
+								<id>create-db-before-test</id>
+								<phase>process-test-classes</phase>
+								<goals>
+									<goal>execute</goal>
+								</goals>
+								<configuration>
+									<autocommit>true</autocommit>
+									<fileset>
+										<basedir>${basedir}/src</basedir>
+										<includes>
+											<include>main/resources/ddl/**/*create*.ddl</include>
+										</includes>
+									</fileset>
+									<print>true</print>
+								</configuration>
+							</execution>
+							<execution>
+								<id>populate-db-before-test</id>
+								<phase>process-test-classes</phase>
+								<goals>
+									<goal>execute</goal>
+								</goals>
+								<configuration>
+									<autocommit>true</autocommit>
+									<fileset>
+										<basedir>${basedir}/src</basedir>
+										<includes>
+											<include>test/resources/ddl/**/*populate*.ddl</include>
+										</includes>
+									</fileset>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

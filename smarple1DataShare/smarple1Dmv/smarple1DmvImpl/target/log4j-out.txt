@@ -1,0 +1,7 @@
+INFO  19-10 20:54:03,208 [smarple1dmv.bo.LocationTest] (LocationTest.java:testTemplate:20)  -testTemplate
+INFO  19-10 20:54:04,637 [smarple1dmv.bo.PersonTest] (PersonTest.java:testTemplate:14)  -Person Test Begin
+INFO  19-10 20:54:04,661 [smarple1dmv.bo.PersonTest] (PersonTest.java:logPeople:32)  -person:smarple1dmv.bo.Person@582264bf
+INFO  19-10 20:54:04,684 [smarple1dmv.bo.PhotoTest] (PhotoTest.java:testTemplate:20)  -testTemplate
+INFO  19-10 20:54:04,761 [smarple1dmv.bo.PhysicalDetailsTest] (PhysicalDetailsTest.java:testTemplate:20)  -testTemplate
+INFO  19-10 20:54:04,835 [smarple1dmv.bo.ResidenceTest] (ResidenceTest.java:testTemplate:20)  -testTemplate
+INFO  19-10 20:54:04,906 [smarple1dmv.bo.VehicleRegistrationTest] (VehicleRegistrationTest.java:testTemplate:20)  -testTemplate

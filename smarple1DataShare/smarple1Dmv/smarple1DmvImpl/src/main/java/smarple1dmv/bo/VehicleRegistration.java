@@ -3,18 +3,46 @@ package smarple1dmv.bo;
 import java.util.Collection;
 import java.util.Date;
 
-import smarple1dmv.bo.Enums.COLOR;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "smarple1dmv_vehicle_registration")
 public class VehicleRegistration {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	
+	@Column(name = "TAG_NO")
 	private String tagNo;
+	
+	@Column(name = "VIN")
 	private String vin;
+	
+	@Column(name = "MAKE")
 	private String make;
+	
+	@Column(name = "MODEL")
 	private String model;
+	
+	@Column(name = "COLOR")
 	private COLOR color;
+	
+	@Column(name = "YEAR")
 	private Date year;
+	
+	@Column(name = "EXPIRATION")
 	private Date expiration;
-	private Collection<Person> owners;
+	
+	/*@Column(name = "STREET_NO")
+	private Collection<Person> owners;*/
+	
+	public enum COLOR {red, blue, yellow, green, black};
 	
 	public long getId() {
 		return id;
@@ -64,10 +92,10 @@ public class VehicleRegistration {
 	public void setExpiration(Date expiration) {
 		this.expiration = expiration;
 	}
-	public Collection<Person> getOwners() {
+	/*public Collection<Person> getOwners() {
 		return owners;
 	}
 	public void setOwners(Collection<Person> owners) {
 		this.owners = owners;
-	}
+	}*/
 }

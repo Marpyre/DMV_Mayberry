@@ -1,14 +1,46 @@
 package smarple1dmv.bo;
 
-import smarple1dmv.bo.Enums.STATE;
+import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name = "smarple1dmv_residence")
 public class Residence {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	
+	@Transient
 	private long locationId;
-	private int streetNo;
-	private String streetName;
-	private String city;
-	private STATE state;
-	private String zip;
+	
+	@Transient
+	private long personId;
+	
+	@Column(name="START_DATE")
+	@Temporal(TemporalType.DATE)
+	private Date startDate;
+	
+	@Column(name="END_DATE")
+	@Temporal(TemporalType.DATE)
+	private Date endDate;
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public long getLocationId() {
 		return locationId;
@@ -17,44 +49,30 @@ public class Residence {
 	public void setLocationId(long locationId) {
 		this.locationId = locationId;
 	}
-
-	public int getStreetNo() {
-		return streetNo;
+	
+	public long getPersonId() {
+		return personId;
 	}
 
-	public void setStreetNo(int streetNo) {
-		this.streetNo = streetNo;
+	public void setPersonId(long personId) {
+		this.personId = personId;
 	}
 
-	public String getStreetName() {
-		return streetName;
+	public Date getStartDate() {
+		return startDate;
 	}
 
-	public void setStreetName(String streetName) {
-		this.streetName = streetName;
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
 	}
 
-	public String getCity() {
-		return city;
+	public Date getEndDate() {
+		return endDate;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
 	}
 
-	public STATE getState() {
-		return state;
-	}
-
-	public void setState(STATE state) {
-		this.state = state;
-	}
-
-	public String getZip() {
-		return zip;
-	}
-
-	public void setZip(String zip) {
-		this.zip = zip;
-	};
+	
 }

@@ -44,6 +44,7 @@
 								</goals>
 								<configuration>
 									<autocommit>true</autocommit>
+									<orderFile>descending</orderFile>
 									<fileset>
 										<basedir>${basedir}/src</basedir>
 										<includes>
@@ -62,6 +63,7 @@
 								</goals>
 								<configuration>
 									<autocommit>true</autocommit>
+									 <orderFile>ascending</orderFile>
 									<fileset>
 										<basedir>${basedir}/src</basedir>
 										<includes>

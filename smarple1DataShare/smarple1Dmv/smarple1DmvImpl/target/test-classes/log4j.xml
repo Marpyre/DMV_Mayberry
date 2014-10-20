@@ -24,13 +24,14 @@
         </layout>
    </appender>
 
-   <logger name="myorg">
-      <level value="debug"/>
+   <logger name="smarple1dmv.bo">
+      <level value="info"/>
       <appender-ref ref="logfile"/>
    </logger>
+   
 
    <root>
-      <priority value="fatal"/>
+      <priority value="info"/>
       <appender-ref ref="CONSOLE"/>
    </root>
 

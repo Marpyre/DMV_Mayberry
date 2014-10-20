@@ -14,6 +14,8 @@ CREATE TABLE smarple1dmv_physical_details (
     DOB DATE,
     HEIGHT INT,
     WEIGHT INT,
+    EYE_COLOR VARCHAR(20),
+    HAIR_COLOR VARCHAR(20),
 
     FOREIGN KEY (PERSON_ID) REFERENCES smarple1dmv_person(ID)    
 );
@@ -53,6 +55,7 @@ CREATE TABLE smarple1dmv_vehicle_registration (
 	VIN VARCHAR(50),
 	MAKE VARCHAR(50),
 	MODEL VARCHAR(50),
+	COLOR VARCHAR(20),
 	YEAR SMALLINT,
 	EXPIRATION DATE,
 	

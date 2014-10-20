@@ -1,2 +1,8 @@
+smarple1dmv\bo\VehicleRegistrationTest.class
+smarple1dmv\bo\ResidenceTest.class
+smarple1dmv\bo\JPATestBase.class
+smarple1dmv\bo\LocationTest.class
+smarple1dmv\bo\PhysicalDetailsTest.class
 smarple1dmv\bo\PersonTest.class
+smarple1dmv\bo\PhotoTest.class
 smarple1dmv\bl\DmvBlTest.class

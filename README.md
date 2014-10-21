@@ -12,3 +12,9 @@ Completed:
 5. Added JPA entity mapping for DMV Business Objects.
 6. Added JPA entity relationships for DMV Business Objects.
 7. Added JUnit tests for DMV Business Objects.
+
+TODO:
+Add injester capability
+Add BL implementation
+Add Mayberry BO JPA entity mapping.
+Complete end to end test successfully.

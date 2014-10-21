@@ -1,12 +1,19 @@
 package smarple1dmv.bo;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -34,6 +41,12 @@ public class Person {
 	@Column(name="NAME_SUFFIX")
 	private String nameSuffix;
 	
+	@ManyToMany(cascade={CascadeType.PERSIST}, fetch=FetchType.LAZY)
+	@JoinTable(name="smarple1dmv_vehicle_owner_link",
+		joinColumns=@JoinColumn(name="PERSON_ID"),
+		inverseJoinColumns=@JoinColumn(name="VEHICLE_ID"))
+	private Set<VehicleRegistration> registrations;
+
 	@Transient
 	private Residence currentResidence;
 	
@@ -45,10 +58,6 @@ public class Person {
 
 	public long getId() {
 		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
 	}
 
 	public String getFirstName() {
@@ -105,5 +114,15 @@ public class Person {
 
 	public void setPhysicalDetails(PhysicalDetails physicalDetails) {
 		this.physicalDetails = physicalDetails;
+	}
+	
+	public Set<VehicleRegistration> getRegistrations() {
+		if(registrations == null){ registrations = new HashSet<VehicleRegistration>();}
+		return registrations;
+	}
+	
+	public void addRegistration(VehicleRegistration vr) {
+		if(registrations == null){ registrations = new HashSet<VehicleRegistration>();}
+		registrations.add(vr);
 	}
 }

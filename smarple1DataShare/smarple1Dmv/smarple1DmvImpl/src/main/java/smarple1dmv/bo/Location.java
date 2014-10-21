@@ -27,7 +27,7 @@ public class Location {
 	private String city;
 
 	@Column(name = "STATE_CODE")
-	@Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.ORDINAL)
 	private STATE state;
 
 	@Column(name = "ZIP")
@@ -39,10 +39,6 @@ public class Location {
 
 	public long getId() {
 		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
 	}
 	
 	public int getStreetNo() {

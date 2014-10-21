@@ -1,7 +1,18 @@
-INFO  19-10 20:54:03,208 [smarple1dmv.bo.LocationTest] (LocationTest.java:testTemplate:20)  -testTemplate
-INFO  19-10 20:54:04,637 [smarple1dmv.bo.PersonTest] (PersonTest.java:testTemplate:14)  -Person Test Begin
-INFO  19-10 20:54:04,661 [smarple1dmv.bo.PersonTest] (PersonTest.java:logPeople:32)  -person:smarple1dmv.bo.Person@582264bf
-INFO  19-10 20:54:04,684 [smarple1dmv.bo.PhotoTest] (PhotoTest.java:testTemplate:20)  -testTemplate
-INFO  19-10 20:54:04,761 [smarple1dmv.bo.PhysicalDetailsTest] (PhysicalDetailsTest.java:testTemplate:20)  -testTemplate
-INFO  19-10 20:54:04,835 [smarple1dmv.bo.ResidenceTest] (ResidenceTest.java:testTemplate:20)  -testTemplate
-INFO  19-10 20:54:04,906 [smarple1dmv.bo.VehicleRegistrationTest] (VehicleRegistrationTest.java:testTemplate:20)  -testTemplate
+INFO  20-10 22:21:46,260 [smarple1dmv.bo.LocationTest] (LocationTest.java:testTemplate:16)  -Location Test Begin
+INFO  20-10 22:21:46,376 [smarple1dmv.bo.LocationTest] (LocationTest.java:logLocation:33)  -Location:smarple1dmv.bo.Location@1a3b1e79
+INFO  20-10 22:21:46,901 [smarple1dmv.bo.PersonTest] (PersonTest.java:testTemplate:14)  -Person Test Begin
+INFO  20-10 22:21:46,914 [smarple1dmv.bo.PersonTest] (PersonTest.java:logPeople:29)  -person:smarple1dmv.bo.Person@19930f2a
+INFO  20-10 22:21:47,432 [smarple1dmv.bo.PhotoTest] (PhotoTest.java:testTemplate:14)  -Photo Test Begin
+INFO  20-10 22:21:47,456 [smarple1dmv.bo.PhotoTest] (PhotoTest.java:logPhoto:38)  -photo:smarple1dmv.bo.Photo@22000c9a
+INFO  20-10 22:21:48,029 [smarple1dmv.bo.PhysicalDetailsTest] (PhysicalDetailsTest.java:testTemplate:14)  -Physical Details Test Begin
+INFO  20-10 22:21:48,040 [smarple1dmv.bo.PhysicalDetailsTest] (PhysicalDetailsTest.java:logPhysicalDetails:34)  -physical details:smarple1dmv.bo.PhysicalDetails@2e191194
+INFO  20-10 22:21:48,040 [smarple1dmv.bo.PhysicalDetailsTest] (PhysicalDetailsTest.java:logPhysicalDetails:34)  -physical details:smarple1dmv.bo.PhysicalDetails@47b86213
+INFO  20-10 22:21:48,538 [smarple1dmv.bo.ResidenceTest] (ResidenceTest.java:testTemplate:18)  -Residence Test Begin
+INFO  20-10 22:21:48,550 [smarple1dmv.bo.ResidenceTest] (ResidenceTest.java:logResidenceDetails:44)  -Residence:smarple1dmv.bo.Residence@12e0f043
+INFO  20-10 22:21:49,027 [smarple1dmv.bo.VehicleRegistrationTest] (VehicleRegistrationTest.java:testTemplate:14)  -Vehicle Registration Test
+INFO  20-10 22:21:49,032 [smarple1dmv.bo.VehicleRegistrationTest] (VehicleRegistrationTest.java:testTemplate:36)  -Vehicle Registration Person1:[]
+INFO  20-10 22:21:49,032 [smarple1dmv.bo.VehicleRegistrationTest] (VehicleRegistrationTest.java:testTemplate:37)  -Vehicle Registration Person2:[]
+INFO  20-10 22:21:49,033 [smarple1dmv.bo.VehicleRegistrationTest] (VehicleRegistrationTest.java:testTemplate:39)  -Owners for Vehicle 1:[smarple1dmv.bo.Person@3c31bc6a, smarple1dmv.bo.Person@18095a36]
+INFO  20-10 22:21:49,033 [smarple1dmv.bo.VehicleRegistrationTest] (VehicleRegistrationTest.java:testTemplate:40)  -Owners for Vehicle 2:[smarple1dmv.bo.Person@18095a36]
+INFO  20-10 22:21:49,038 [smarple1dmv.bo.VehicleRegistrationTest] (VehicleRegistrationTest.java:logVehicleRegistration:50)  -Vehicle Registration:smarple1dmv.bo.VehicleRegistration@23036f09
+INFO  20-10 22:21:49,039 [smarple1dmv.bo.VehicleRegistrationTest] (VehicleRegistrationTest.java:logVehicleRegistration:50)  -Vehicle Registration:smarple1dmv.bo.VehicleRegistration@330b7f9

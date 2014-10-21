@@ -9,7 +9,6 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -60,51 +59,72 @@ public class PhysicalDetails implements Serializable {
 	
 	public enum SEX {M, F};
 	
-	public Person getId() {
-		return person;
-	}
-	public void setId(Person person) {
+	public PhysicalDetails(){}
+	
+	public PhysicalDetails(Person person){
 		this.person = person;
 	}
+	
+	public Long getId() {
+		return person==null ? 0 : person.getId();
+	}
+	
+	public Person getPerson() {
+		return person;
+	}
+
 	public SEX getSex() {
 		return sex;
 	}
+	
 	public void setSex(SEX sex) {
 		this.sex = sex;
 	}
+	
 	public Date getDob() {
 		return dob;
 	}
+	
 	public void setDob(Date dob) {
 		this.dob = dob;
 	}
+	
 	public int getHeight() {
 		return height;
 	}
+	
 	public void setHeight(int height) {
 		this.height = height;
 	}
+	
 	public int getWeight() {
 		return weight;
 	}
+	
 	public void setWeight(int weight) {
 		this.weight = weight;
 	}
+	
 	public COLOR getEyeColor() {
 		return eyeColor;
 	}
+	
 	public void setEyeColor(COLOR eyeColor) {
 		this.eyeColor = eyeColor;
 	}
+	
 	public COLOR getHairColor() {
 		return hairColor;
 	}
+	
 	public void setHairColor(COLOR hairColor) {
 		this.hairColor = hairColor;
 	}
+	
 	public byte[] getPhoto() {
 		return photo;
 	}
+	
 	public void setPhoto(byte[] photo) {
 		this.photo = photo;
 	};

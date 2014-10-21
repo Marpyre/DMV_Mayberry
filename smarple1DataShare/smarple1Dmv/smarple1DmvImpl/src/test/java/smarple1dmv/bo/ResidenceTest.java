@@ -1,30 +1,41 @@
 package smarple1dmv.bo;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import java.sql.Date;
+
 import javax.persistence.Query;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.junit.Test;
 
-public class ResidenceTest {
+public class ResidenceTest extends JPATestBase {
 	private static Log log = LogFactory.getLog(ResidenceTest.class);
-	private static final String PERSISTENCE_UNIT = "bo";
-	private static EntityManagerFactory emf;
-	private EntityManager em;
 
+
+	@SuppressWarnings("deprecation")
 	@Test
 	public void testTemplate() {
-			log.info("testTemplate");
-			emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT);
-			em = emf.createEntityManager();
-			em.getTransaction().begin();
+			log.info("Residence Test Begin");
+			
+			Person person = new Person();
+			person.setFirstName("Charles");
+			person.setMiddleName("C");
+			person.setLastName("Haney");
+			em.persist(person);
+			
+			Location location = new Location();
+			location.setCity("Washington, D.C.");
+			em.persist(location);
+			
+			Residence residence = new Residence(person, location);
+			residence.setStartDate(new Date(2012, 12, 12));
+			residence.setEndDate(new Date(2014, 12, 12));
+			em.persist(residence);
+			
 			em.flush();
+			em.clear();
+			
 			logResidenceDetails();
-			em.getTransaction().commit();
-			em.close();
 	}
 
 	public void logResidenceDetails() {

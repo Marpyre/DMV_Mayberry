@@ -4,13 +4,16 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 
 @Entity
 @Table(name = "smarple1dmv_residence")
@@ -20,11 +23,14 @@ public class Residence {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@Transient
-	private long locationId;
+	@OneToOne(optional=false,fetch=FetchType.LAZY)
+    @JoinColumn(name="LOCATION_ID", referencedColumnName="ID")
+	private Location location;
 	
-	@Transient
-	private long personId;
+	//Uni-directional Many to One Association to Person
+	@ManyToOne
+	@JoinColumn(name = "PERSON_ID")
+	private Person person;
 	
 	@Column(name="START_DATE")
 	@Temporal(TemporalType.DATE)
@@ -34,28 +40,31 @@ public class Residence {
 	@Temporal(TemporalType.DATE)
 	private Date endDate;
 	
+	public Residence(){}
+	
+	public Residence(Person person, Location location){
+		this.person = person;
+		this.location = location;
+	}
+	
 	public long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public Location getLocation() {
+		return location;
 	}
 
-	public long getLocationId() {
-		return locationId;
-	}
-
-	public void setLocationId(long locationId) {
-		this.locationId = locationId;
+	public void setLocation(Location location) {
+		this.location = location;
 	}
 	
-	public long getPersonId() {
-		return personId;
+	public Person getPerson() {
+		return person;
 	}
 
-	public void setPersonId(long personId) {
-		this.personId = personId;
+	public void setPerson(Person person) {
+		this.person = person;
 	}
 
 	public Date getStartDate() {

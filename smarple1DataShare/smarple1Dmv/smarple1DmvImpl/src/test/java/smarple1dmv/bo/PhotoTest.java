@@ -1,30 +1,35 @@
 package smarple1dmv.bo;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.persistence.Query;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import org.junit.Test;
 
-public class PhotoTest {
+public class PhotoTest extends JPATestBase {
 	private static Log log = LogFactory.getLog(PhotoTest.class);
-	private static final String PERSISTENCE_UNIT = "bo";
-	private static EntityManagerFactory emf;
-	private EntityManager em;
 
 	@Test
 	public void testTemplate() {
-			log.info("testTemplate");
-			emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT);
-			em = emf.createEntityManager();
-			em.getTransaction().begin();
-			em.flush();
-			logPhoto();
-			em.getTransaction().commit();
-			em.close();
+		log.info("Photo Test Begin");
+		
+		Person person = new Person();
+		person.setFirstName("Josie");
+		person.setMiddleName("J");
+		person.setLastName("Jennings");
+		em.persist(person);
+		
+		PhysicalDetails pd = new PhysicalDetails(person);
+		pd.setHeight(68);
+		em.persist(pd);
+		
+		Photo photo = new Photo(pd);
+		photo.setImage(new byte[10*1000]);
+		em.persist(photo);
+		em.flush();
+		
+		em.clear();
+		logPhoto();
 	}
 
 	public void logPhoto() {

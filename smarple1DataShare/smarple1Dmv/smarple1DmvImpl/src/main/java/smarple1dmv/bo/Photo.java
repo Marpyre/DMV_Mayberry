@@ -30,12 +30,18 @@ public class Photo implements Serializable {
 	@Column(name="IMAGE")
 	private byte[] image;
 	
-	public PhysicalDetails getId() {
+	public Photo(){}
+	
+	public Photo(PhysicalDetails pd){
+		this.physicalDetails = pd;
+	}
+	
+	public PhysicalDetails getPhysicalDetails(){
 		return physicalDetails;
 	}
 	
-	public void setId(PhysicalDetails id) {
-		this.physicalDetails = id;
+	public long getId() {
+		return physicalDetails==null ? 0 : physicalDetails.getId();
 	}
 	
 	public byte[] getImage() {

@@ -1,13 +1,15 @@
 package smarple1dmv.bo;
 
-import java.util.Collection;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -39,63 +41,84 @@ public class VehicleRegistration {
 	@Column(name = "EXPIRATION")
 	private Date expiration;
 	
-	/*@Column(name = "STREET_NO")
-	private Collection<Person> owners;*/
+	@ManyToMany(mappedBy="registrations")
+	private Set<Person> owners;
 	
 	public enum COLOR {red, blue, yellow, green, black};
+	
+	public VehicleRegistration(){}
+
+	public VehicleRegistration(Person owner){
+		this.getOwners().add(owner);
+	}
 	
 	public long getId() {
 		return id;
 	}
-	public void setId(long id) {
-		this.id = id;
-	}
+
 	public String getTagNo() {
 		return tagNo;
 	}
+	
 	public void setTagNo(String tagNo) {
 		this.tagNo = tagNo;
 	}
+	
 	public String getVin() {
 		return vin;
 	}
+	
 	public void setVin(String vin) {
 		this.vin = vin;
 	}
+	
 	public String getMake() {
 		return make;
 	}
+	
 	public void setMake(String make) {
 		this.make = make;
 	}
+	
 	public String getModel() {
 		return model;
 	}
+	
 	public void setModel(String model) {
 		this.model = model;
 	}
+	
 	public COLOR getColor() {
 		return color;
 	}
+	
 	public void setColor(COLOR color) {
 		this.color = color;
 	}
+	
 	public Date getYear() {
 		return year;
 	}
+	
 	public void setYear(Date year) {
 		this.year = year;
 	}
+	
 	public Date getExpiration() {
 		return expiration;
 	}
+	
 	public void setExpiration(Date expiration) {
 		this.expiration = expiration;
 	}
-	/*public Collection<Person> getOwners() {
+	
+	public Set<Person> getOwners() {
+		if(owners == null){ owners = new HashSet<Person>();}
 		return owners;
 	}
-	public void setOwners(Collection<Person> owners) {
-		this.owners = owners;
-	}*/
+	
+	public void addOwner(Person newOwner) {
+		if(owners == null){ owners = new HashSet<Person>();}
+		owners.add(newOwner);
+	}
 }

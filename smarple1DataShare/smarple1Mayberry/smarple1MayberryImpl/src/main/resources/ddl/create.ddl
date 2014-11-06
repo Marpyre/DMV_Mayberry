@@ -13,7 +13,7 @@ CREATE TABLE smarple1may_activity (
     POI_ID BIGINT not null,
     ACTIVITY_DATE DATETIME,
     CODE INT,
-    DESCRIPTION VARCHAR(32),
+    DESCRIPTION VARCHAR(200),
 
     FOREIGN KEY (POI_ID) REFERENCES smarple1may_poi(ID)    
 );

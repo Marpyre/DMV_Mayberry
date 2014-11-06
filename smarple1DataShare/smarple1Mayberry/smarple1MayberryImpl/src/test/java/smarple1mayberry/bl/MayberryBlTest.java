@@ -1,41 +1,51 @@
 package smarple1mayberry.bl;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class MayberryBlTest {
+import smarple1mayberry.bo.Activity;
+import smarple1mayberry.bo.POI;
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
+public class MayberryBlTest extends JPATestBase {
 
 	/**
-	 * This will run the test that checks the end to end scenario works. The
-	 * steps for the scenario are commented out and will be implemented and
-	 * tested accordingly later.
+	 * This will run the test that checks the end to end scenario works.
+	 * 
+	 * @throws Exception
 	 */
 	@Test
-	public void test() {
-//		1. reset (using MayberryTestUtilImpl)
-//		2. addPoi (PoiMgmtImpl)
-//		3. addActivity (PoiMgmtImpl)
-//		4. getPoi (PoiMgmtImpl)
-//		5. isDangerous (PoiMgmtImpl)
+	public void test() throws Exception {
+		// 1. reset (using MayberryTestUtilImpl)
+		super.cleanup();
+
+		// 2. addPoi (PoiMgmtImpl)
+		addPoi();
+
+		// 3. addActivity (PoiMgmtImpl)
+		addActivity();
+
+		// 4. getPoi (PoiMgmtImpl)
+		// 5. isDangerous (PoiMgmtImpl)
+
 	}
 
+	private void addPoi() {
+		POI poi1 = new POI();
+		poi1.setFirstName("Chucky");
+		em.persist(poi1);
+	}
+
+	private void addActivity() {
+		POI poi2 = new POI();
+		poi2.setFirstName("Rick");
+		em.persist(poi2);
+		em.getTransaction().begin();
+		em.flush();
+
+		// Getting constraint error because poi_id not
+		// allowed to be null? I thought if I flushed the parent element to the
+		// database, an id would be generated.
+		
+		// Activity act1 = new Activity(poi2);
+		// em.persist(act1); 
+	}
 }

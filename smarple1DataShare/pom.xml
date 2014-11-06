@@ -22,6 +22,16 @@
 			<name>JBoss Nexus Repository</name>
 			<url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
 		</repository>
+
+		<repository>
+			<id>webdev-snapshot</id>
+			<name>webdev SNAPSHOT</name>
+			<url>http://webdev.jhuep.com/~jcs/maven2-snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>daily</updatePolicy>
+			</snapshots>
+		</repository>
 	</repositories>
 
 	<properties>
@@ -88,15 +98,6 @@
 	</dependencyManagement>
 
 	<build>
-		<!-- filtering will replace URLs, credentials, etc in the files copied 
-			to the target directory and used during testing. -->
-		<testResources>
-			<testResource>
-				<directory>src/test/resources</directory>
-				<filtering>true</filtering>
-			</testResource>
-		</testResources>
-
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -142,44 +143,6 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-
-	<dependencies>
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.1-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
 
 	<profiles>
 		<profile> <!-- H2 embedded/file-based DB -->

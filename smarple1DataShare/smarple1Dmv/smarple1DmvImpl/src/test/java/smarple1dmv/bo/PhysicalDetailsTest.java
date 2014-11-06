@@ -18,13 +18,13 @@ public class PhysicalDetailsTest extends JPATestBase {
 			person.setMiddleName("T");
 			person.setLastName("Johnson");
 			em.persist(person);
+			em.getTransaction().begin();
+			em.flush();
 			
 			PhysicalDetails pd = new PhysicalDetails(person);
 			pd.setHeight(68);
 			em.persist(pd);
-			em.flush();
-			
-			em.clear();
+
 			logPhysicalDetails();
 	}
 	

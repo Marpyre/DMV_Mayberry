@@ -1,10 +1,15 @@
+smarple1dmv\dao\PersonDAO.class
 smarple1dmv\bo\Photo.class
-smarple1dmv\bo\Location$STATE.class
+smarple1dmv\blimpl\DmvIngestor$DAOException.class
 smarple1dmv\bo\Person.class
+smarple1dmv\bo\Location$STATE.class
 smarple1dmv\bo\PhysicalDetails.class
 smarple1dmv\bo\VehicleRegistration$COLOR.class
+smarple1dmv\blimpl\DmvIngestor$EDmvException.class
 smarple1dmv\bo\Residence.class
+smarple1dmv\blimpl\DmvIngestor.class
 smarple1dmv\bo\PhysicalDetails$COLOR.class
+smarple1dmv\dao\VehicleDAO.class
 smarple1dmv\bo\PhysicalDetails$SEX.class
 smarple1dmv\bo\Location.class
 smarple1dmv\bo\VehicleRegistration.class

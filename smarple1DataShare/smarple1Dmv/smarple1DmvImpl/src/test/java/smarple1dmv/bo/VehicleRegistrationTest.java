@@ -39,8 +39,6 @@ public class VehicleRegistrationTest extends JPATestBase {
 			log.info("Owners for Vehicle 1:" + vr1.getOwners());
 			log.info("Owners for Vehicle 2:" + vr2.getOwners());
 		
-			em.flush();
-			em.clear();
 			logVehicleRegistration();
 	}
 

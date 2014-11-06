@@ -19,16 +19,19 @@ public class PhotoTest extends JPATestBase {
 		person.setLastName("Jennings");
 		em.persist(person);
 		
+		em.getTransaction().begin();
+		em.flush();
+		
 		PhysicalDetails pd = new PhysicalDetails(person);
 		pd.setHeight(68);
 		em.persist(pd);
 		
+		em.flush();
+		
 		Photo photo = new Photo(pd);
 		photo.setImage(new byte[10*1000]);
 		em.persist(photo);
-		em.flush();
-		
-		em.clear();
+
 		logPhoto();
 	}
 

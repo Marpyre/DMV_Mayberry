@@ -8,7 +8,6 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 
-	<groupId>	smarple1.classProject.smarple1Mayberry.smarple1MayberryImpl</groupId>
 	<artifactId>smarple1MayberryImpl</artifactId>
 
 	<name>Smarple1 Mayberry Implementation</name>
@@ -18,9 +17,35 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<profiles>
 		<profile>
 			<id>testing</id>
@@ -31,6 +56,22 @@
 			</activation>
 
 			<build>
+
+				<!-- filtering will replace URLs, credentials, etc in the files copied 
+					to the target directory and used during testing. -->
+				<testResources>
+					<testResource>
+						<directory>src/test/resources</directory>
+						<filtering>true</filtering>
+					</testResource>
+				</testResources>
+				<resources>
+					<resource>
+						<directory>src/main/resources</directory>
+						<filtering>true</filtering>
+					</resource>
+				</resources>
+
 				<plugins>
 					<plugin>
 						<!-- runs schema against the DB -->
@@ -45,6 +86,7 @@
 								</goals>
 								<configuration>
 									<autocommit>true</autocommit>
+									<orderFile>descending</orderFile>
 									<fileset>
 										<basedir>${basedir}/src</basedir>
 										<includes>
@@ -62,6 +104,7 @@
 								</goals>
 								<configuration>
 									<autocommit>true</autocommit>
+									<orderFile>ascending</orderFile>
 									<fileset>
 										<basedir>${basedir}/src</basedir>
 										<includes>

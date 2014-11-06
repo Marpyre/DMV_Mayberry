@@ -2,18 +2,61 @@ package smarple1mayberry.bo;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+@Table(name = "smarple1may_activity")
 public class Activity {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	
+	//Uni-directional Many to One Association to POI
+	@ManyToOne
+	@JoinColumn(name = "POI_ID")
+	private POI poi;
+	
+	@Column(name="ACTIVITY_DATE")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date Date;
-	//private enum Type{};
+	
+	@Column(name="CODE")
+	@Enumerated(EnumType.ORDINAL)
+	private Code type;
+	
+	@Column(name="DESCRIPTION")
 	private String Description;
 
+	public enum Code {Gang, Speeding, ParkingViolation};
+	
+	public Activity(){}
+	
+	public Activity(POI poi){
+		this.poi = poi;
+	}
+	
 	public long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public POI getPoi() {
+		return poi;
+	}
+
+	public void setPoi(POI poi) {
+		this.poi = poi;
 	}
 
 	public Date getDate() {

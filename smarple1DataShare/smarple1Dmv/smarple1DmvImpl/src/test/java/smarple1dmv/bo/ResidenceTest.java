@@ -32,9 +32,6 @@ public class ResidenceTest extends JPATestBase {
 			residence.setEndDate(new Date(2014, 12, 12));
 			em.persist(residence);
 			
-			em.flush();
-			em.clear();
-			
 			logResidenceDetails();
 	}
 

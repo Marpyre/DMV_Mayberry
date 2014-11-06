@@ -18,8 +18,6 @@ public class PersonTest extends JPATestBase {
 			person.setMiddleName("N");
 			person.setLastName("Case");
 			em.persist(person);
-			em.flush();
-			em.clear();
 			logPeople();
 	}
 

@@ -20,10 +20,7 @@ public class LocationTest extends JPATestBase {
 		location.setCity("Baltimore");
 		location.setState(STATE.MD);
 		em.persist(location);
-		
-		em.flush();
-		em.clear();
-		
+
 		logLocation();
 	}
 

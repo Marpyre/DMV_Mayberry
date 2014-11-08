@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: smarple1dmv.bo.PersonTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 sec - in smarple1dmv.bo.PersonTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec - in smarple1dmv.bo.PersonTest

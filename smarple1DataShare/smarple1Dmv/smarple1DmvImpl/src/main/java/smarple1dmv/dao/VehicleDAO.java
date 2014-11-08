@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 
 import smarple1dmv.bo.VehicleRegistration;
 
-public class VehicleDAO {
+public class VehicleDAO implements IVehicleDAO{
 	private EntityManager em;
 	
 	public void setEntityManager(EntityManager em) {

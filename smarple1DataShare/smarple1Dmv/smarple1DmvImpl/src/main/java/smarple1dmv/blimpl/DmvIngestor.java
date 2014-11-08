@@ -14,16 +14,15 @@ import smarple1dmv.bo.Person;
 import smarple1dmv.bo.VehicleRegistration;
 import smarple1dmv.dao.PersonDAO;
 import smarple1dmv.dao.VehicleDAO;
+import smarple1dmv.dao.DAOException;
 
 import ejava.projects.edmv.xml.EDmvParser;
 
 import info.ejava.projects.edmv._1.Dmv;
 
 /**
- * This class provides a _sparse_ example implementation of how one can use the
- * parser to ingest the information from the XML file to populate the database.
- * 
- * @author jcstaff
+ * This class is a modified parser from the class example.
+ * It ingests the information from the XML file to populate the database.
  *
  */
 public class DmvIngestor {
@@ -119,7 +118,7 @@ public class DmvIngestor {
 					.getRef();
 			Person ownerBO = dto2bo.get(ownerDTO.getId());
 			if (ownerBO == null) {
-				throw new EDmvException("owner not found:" + ownerDTO.getId());
+				throw new DmvException("owner not found:" + ownerDTO.getId());
 			}
 
 			registrationBO.getOwners().add(ownerBO);
@@ -131,31 +130,6 @@ public class DmvIngestor {
 		for(Person ownerBO : registrationBO.getOwners()){
 			ownerBO.addRegistration(registrationBO);
 			personDAO.update(ownerBO);
-		}
-		
-		
-	}
-
-	public class DAOException extends Exception {
-		private static final long serialVersionUID = 1L;
-
-		public DAOException(String message) {
-			super(message);
-		}
-
-		public DAOException(String message, Exception ex) {
-			super(message, ex);
-		}
-	}
-
-	public class EDmvException extends Exception {
-		private static final long serialVersionUID = 1L;
-
-		public EDmvException() {
-		}
-
-		public EDmvException(String message) {
-			super(message);
 		}
 	}
 }

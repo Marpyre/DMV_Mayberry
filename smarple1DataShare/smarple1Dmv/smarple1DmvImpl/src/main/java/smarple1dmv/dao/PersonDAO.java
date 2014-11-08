@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 
 import smarple1dmv.bo.Person;
 
-public class PersonDAO {
+public class PersonDAO implements IPersonDAO{
 	private EntityManager em;
 	
 	public void setEntityManager(EntityManager em) {

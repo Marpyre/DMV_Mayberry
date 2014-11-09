@@ -1,4 +1,24 @@
-DEBUG 08-11 19:09:08,486 [smarple1mayberry.bl.JPATestBase] (JPATestBase.java:setUpClass:22)  -Creating entity manager factory
-DEBUG 08-11 19:09:09,693 [smarple1mayberry.bl.JPATestBase] (JPATestBase.java:setUp:28)  -Creating entity manager
-DEBUG 08-11 19:09:09,867 [smarple1mayberry.bl.JPATestBase] (JPATestBase.java:tearDown:35)  -TearDown() started, em=org.hibernate.jpa.internal.EntityManagerImpl@38a3f968
-DEBUG 08-11 19:09:09,870 [smarple1mayberry.bl.JPATestBase] (JPATestBase.java:tearDownClass:50)  -Closing entity manager factory
+DEBUG 08-11 20:55:53,776 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:setUpClass:32)  -Creating entity manager factory
+DEBUG 08-11 20:55:55,075 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:setUp:38)  -Creating entity manager
+INFO  08-11 20:55:55,122 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:test:51)  -Mayberry End to End Test Started!
+INFO  08-11 20:55:55,122 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:cleanup:163)  -Clean up started.
+INFO  08-11 20:55:55,222 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:cleanup:179)  -Clean up complete.
+INFO  08-11 20:55:55,223 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:addPoi:76)  -Adding POI.
+INFO  08-11 20:55:55,246 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:addPoi:83)  -Added POI: Chucky.
+INFO  08-11 20:55:55,247 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:addActivity:87)  -Adding POI.
+INFO  08-11 20:55:55,248 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:addActivity:94)  -Added POI: Rick.
+INFO  08-11 20:55:55,248 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:addActivity:96)  -Adding Activity.
+INFO  08-11 20:55:55,252 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:addActivity:103)  -Added Activity: Gang
+INFO  08-11 20:55:55,252 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:getPoi:108)  -Getting POI.
+INFO  08-11 20:55:55,260 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:getPoi:113)  -Got POI: Chucky
+INFO  08-11 20:55:55,260 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:isDangerous:121)  -Checking if POI dangerous.
+INFO  08-11 20:55:55,261 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:isDangerous:125)  -POI has 0 activities.
+INFO  08-11 20:55:55,261 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:isDangerous:132)  -POI not dangerous.  POI has 0 activities.
+INFO  08-11 20:55:55,261 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:getPoi:108)  -Getting POI.
+INFO  08-11 20:55:55,263 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:getPoi:113)  -Got POI: Rick
+INFO  08-11 20:55:55,263 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:isDangerous:121)  -Checking if POI dangerous.
+INFO  08-11 20:55:55,264 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:isDangerous:125)  -POI has 1 activities.
+INFO  08-11 20:55:55,264 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:isDangerous:128)  -POI very dangerous.
+INFO  08-11 20:55:55,265 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:test:72)  -Mayberry End to End Test Complete!
+DEBUG 08-11 20:55:55,265 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:tearDown:139)  -TearDown() started, em=org.hibernate.jpa.internal.EntityManagerImpl@79fbdc5a
+DEBUG 08-11 20:55:55,269 [smarple1mayberry.bl.MayberryBlTest] (MayberryBlTest.java:tearDownClass:154)  -Closing entity manager factory

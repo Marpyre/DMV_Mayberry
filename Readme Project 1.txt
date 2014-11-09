@@ -10,6 +10,7 @@ Added JUnit tests for DMV Business Objects.
 Added JPA entity mapping for Mayberry Business Objects.
 Added JPA entity relationships for Mayberry Business Objects.
 Added injester capability. Passes all unit tests.
+Added Complete Mayberry end to end test scenario code.
 
 TODO: Complete end-to-end test scenarios. 
 The implementation logic should be straightforward to code, 

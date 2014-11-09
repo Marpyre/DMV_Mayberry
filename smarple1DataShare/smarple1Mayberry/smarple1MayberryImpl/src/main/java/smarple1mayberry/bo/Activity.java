@@ -24,7 +24,7 @@ public class Activity {
 	private long id;
 	
 	//Uni-directional Many to One Association to POI
-	@ManyToOne
+	@ManyToOne(optional=false)
 	@JoinColumn(name = "POI_ID")
 	private POI poi;
 	
@@ -65,6 +65,14 @@ public class Activity {
 
 	public void setDate(Date date) {
 		Date = date;
+	}
+
+	public Code getType() {
+		return type;
+	}
+
+	public void setType(Code type) {
+		this.type = type;
 	}
 
 	public String getDescription() {

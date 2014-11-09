@@ -1,12 +1,16 @@
 package smarple1mayberry.bo;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -29,6 +33,10 @@ public class POI {
 	
 	@Transient
 	private Collection<POI> aliases;
+	
+	@OneToMany(mappedBy="poi",targetEntity=Activity.class,
+		       fetch=FetchType.EAGER)
+	private Set<Activity> activities;
 
 	public long getId() {
 		return id;
@@ -64,5 +72,24 @@ public class POI {
 
 	public void setAliases(Collection<POI> aliases) {
 		this.aliases = aliases;
+	}
+
+	public Set<Activity> getActivities() {		
+		if(activities == null){
+			return new HashSet<Activity>();
+		}
+		else{
+			return activities;
+		}
+	}
+	
+	public void addActivity(Activity act){
+		if(activities == null){
+			activities = new HashSet<Activity>();
+			activities.add(act);
+		}
+		else{
+			activities.add(act);
+		}
 	}
 }

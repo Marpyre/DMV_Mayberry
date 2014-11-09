@@ -3,13 +3,11 @@ package smarple1dmv.bl;
 import static org.junit.Assert.assertNotNull;
 
 import java.io.InputStream;
-import java.util.List;
 
 import org.junit.Test;
 
 import smarple1dmv.blimpl.DmvIngestor;
 import smarple1dmv.bo.JPATestBase;
-import smarple1dmv.bo.Person;
 import smarple1dmv.dao.PersonDAO;
 import smarple1dmv.dao.VehicleDAO;
 

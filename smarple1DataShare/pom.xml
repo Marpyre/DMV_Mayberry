@@ -43,6 +43,7 @@
 		<db.host>${jboss.host}</db.host>
 
 		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+		<maven-ejb-plugin.version>2.3</maven-ejb-plugin.version>
 		<maven-jar-plugin.version>2.5</maven-jar-plugin.version>
 		<maven-surefire-plugin.version>2.17</maven-surefire-plugin.version>
 		<sql-maven-plugin.version>1.5</sql-maven-plugin.version>
@@ -52,9 +53,10 @@
 		<hibernate-entitymanager.version>4.3.4.Final</hibernate-entitymanager.version>
 		<hibernate3-maven-plugin.version>3.0</hibernate3-maven-plugin.version>
 		<hibernate3.version>3.6.10.Final</hibernate3.version>
+		<javax.ejb-api.version>3.2</javax.ejb-api.version>
 		<junit.version>4.10</junit.version>
 		<log4j.version>1.2.13</log4j.version>
-		<slf4j.version>1.6.1</slf4j.version>
+		<slf4j.version>1.7.2</slf4j.version>
 	</properties>
 
 	<dependencyManagement>
@@ -75,6 +77,18 @@
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-entitymanager</artifactId>
 				<version>${hibernate-entitymanager.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.ejb</groupId>
+				<artifactId>javax.ejb-api</artifactId>
+				<version>${javax.ejb-api.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
 			</dependency>
 
 			<dependency>
@@ -112,6 +126,19 @@
 					<configuration>
 						<source>${java.source.version}</source>
 						<target>${java.target.version}</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ejb-plugin</artifactId>
+					<version>${maven-ejb-plugin.version}</version>
+					<configuration>
+						<ejbVersion>3.2</ejbVersion>
+						<archive>
+							<manifest>
+								<addClasspath>true</addClasspath>
+							</manifest>
+						</archive>
 					</configuration>
 				</plugin>
 				<plugin>

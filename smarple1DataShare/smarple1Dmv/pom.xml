@@ -17,6 +17,7 @@
 
 	<modules>
 		<module>smarple1DmvImpl</module>
+		<module>smarple1DmvEJB</module>
 	</modules>
 
 </project>

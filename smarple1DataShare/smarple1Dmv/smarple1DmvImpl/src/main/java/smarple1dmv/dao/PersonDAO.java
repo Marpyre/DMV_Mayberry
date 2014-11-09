@@ -1,10 +1,13 @@
 package smarple1dmv.dao;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import smarple1dmv.bo.Location;
 import smarple1dmv.bo.Person;
+import smarple1dmv.bo.Residence;
 
 public class PersonDAO implements IPersonDAO {
 	private EntityManager em;
@@ -23,6 +26,22 @@ public class PersonDAO implements IPersonDAO {
 
 	public void update(Person person) {
 		em.merge(person);
+	}
+	
+	public void addNewResidence(Person person, Location location, Date startDate){
+		em.persist(location);
+		
+		Residence residence = new Residence(person, location);
+		residence.setStartDate(startDate);
+		em.persist(residence);
+	}
+	
+	public void changeResidence(Person person, Location location, Date startDate){
+		em.persist(location);
+		
+		Residence residence = new Residence(person, location);
+		residence.setStartDate(startDate);
+		em.persist(residence);
 	}
 
 	@SuppressWarnings("unchecked")

@@ -24,7 +24,7 @@ public class ResidenceTest extends JPATestBase {
 			em.persist(person);
 			
 			Location location = new Location();
-			location.setCity("Washington, D.C.");
+			location.setCity("Arlington");
 			em.persist(location);
 			
 			Residence residence = new Residence(person, location);

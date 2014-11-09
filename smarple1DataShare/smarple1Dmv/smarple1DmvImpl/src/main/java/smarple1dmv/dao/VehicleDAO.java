@@ -25,4 +25,12 @@ public class VehicleDAO implements IVehicleDAO{
 	                             .setMaxResults(count)
 	                             .getResultList();
 	}
+	
+	@SuppressWarnings("unchecked")
+    public List<VehicleRegistration> getRegistrationByMakeModel(String make, String model)  {
+	    return (List<VehicleRegistration>)
+			em.createQuery(
+					"select v from VehicleRegistration v where v.make like :make and v.model like :model")
+			.setParameter("make", make).setParameter("model", model).getResultList();
+	}
 }

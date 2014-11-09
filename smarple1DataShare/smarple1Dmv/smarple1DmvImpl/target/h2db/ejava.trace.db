@@ -1,4 +1,4 @@
-11-08 20:55:37 jdbc[5]: null
+11-08 22:06:43 jdbc[6]: null
 org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-168]
 	at org.h2.message.DbException.get(DbException.java:169)
 	at org.h2.message.DbException.get(DbException.java:146)

@@ -63,8 +63,8 @@ CREATE TABLE smarple1dmv_vehicle_registration (
 );
 
 CREATE TABLE smarple1dmv_vehicle_owner_link (
-	PERSON_ID BIGINT,
-	VEHICLE_ID BIGINT,
+	PERSON_ID BIGINT not null,
+	VEHICLE_ID BIGINT not null,
 	
 	FOREIGN KEY (PERSON_ID) REFERENCES smarple1dmv_person(ID),
 	FOREIGN KEY (VEHICLE_ID) REFERENCES smarple1dmv_vehicle_registration(ID)

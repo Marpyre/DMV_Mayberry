@@ -1,4 +1,4 @@
-DEBUG 08-11 16:48:01,712 [smarple1mayberry.bl.JPATestBase] (JPATestBase.java:setUpClass:22)  -Creating entity manager factory
-DEBUG 08-11 16:48:02,958 [smarple1mayberry.bl.JPATestBase] (JPATestBase.java:setUp:28)  -Creating entity manager
-DEBUG 08-11 16:48:03,137 [smarple1mayberry.bl.JPATestBase] (JPATestBase.java:tearDown:35)  -TearDown() started, em=org.hibernate.jpa.internal.EntityManagerImpl@6a6252c1
-DEBUG 08-11 16:48:03,140 [smarple1mayberry.bl.JPATestBase] (JPATestBase.java:tearDownClass:50)  -Closing entity manager factory
+DEBUG 08-11 19:09:08,486 [smarple1mayberry.bl.JPATestBase] (JPATestBase.java:setUpClass:22)  -Creating entity manager factory
+DEBUG 08-11 19:09:09,693 [smarple1mayberry.bl.JPATestBase] (JPATestBase.java:setUp:28)  -Creating entity manager
+DEBUG 08-11 19:09:09,867 [smarple1mayberry.bl.JPATestBase] (JPATestBase.java:tearDown:35)  -TearDown() started, em=org.hibernate.jpa.internal.EntityManagerImpl@38a3f968
+DEBUG 08-11 19:09:09,870 [smarple1mayberry.bl.JPATestBase] (JPATestBase.java:tearDownClass:50)  -Closing entity manager factory

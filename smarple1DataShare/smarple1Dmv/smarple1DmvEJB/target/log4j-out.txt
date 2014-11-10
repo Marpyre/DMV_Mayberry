@@ -1,0 +1,2 @@
+INFO  10-11 15:11:36,848 [smarple1DmvEJB.ReservationTest] (ReservationTest.java:testPing:21)  -*** testPing ***
+DEBUG 10-11 15:11:36,850 [smarple1DmvEJB.ReservationEJB] (ReservationEJB.java:ping:25)  -ping called

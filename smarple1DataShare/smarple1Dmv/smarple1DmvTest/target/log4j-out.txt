@@ -1,0 +1,4 @@
+DEBUG 10-11 15:24:48,657 [smarple1DmvTest.ReservationIT] (ReservationIT.java:setUp:27)  -getting jndi initial context
+DEBUG 10-11 15:24:48,874 [smarple1DmvTest.ReservationIT] (ReservationIT.java:setUp:29)  -jndi={java.naming.factory.initial=org.jboss.naming.remote.client.InitialContextFactory, java.naming.provider.url=http-remoting://127.0.0.1:8080, java.naming.factory.url.pkgs=org.jboss.ejb.client.naming, jboss.naming.client.ejb.context=true}
+DEBUG 10-11 15:24:49,159 [smarple1DmvTest.ReservationIT] (ReservationIT.java:setUp:35)  -reservationist=Proxy for remote EJB StatelessEJBLocator{appName='smarple1DmvEAR-1.0-SNAPSHOT', moduleName='smarple1DmvEJB-1.0-SNAPSHOT', distinctName='', beanName='ReservationEJB', view='interface smarple1DmvEJB.IReservationRemote'}
+INFO  10-11 15:24:49,160 [smarple1DmvTest.ReservationIT] (ReservationIT.java:testPing:40)  -*** testPing ***

@@ -18,6 +18,8 @@
 	<modules>
 		<module>smarple1DmvImpl</module>
 		<module>smarple1DmvEJB</module>
+		<module>smarple1DmvEAR</module>
+		<module>smarple1DmvTest</module>
 	</modules>
 
 </project>

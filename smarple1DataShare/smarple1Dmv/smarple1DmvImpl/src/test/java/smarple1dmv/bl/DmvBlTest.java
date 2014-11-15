@@ -1,13 +1,10 @@
 package smarple1dmv.bl;
 
-import static org.junit.Assert.assertNotNull;
-
-import java.io.InputStream;
 import java.sql.Date;
 
 import org.junit.Test;
 
-import smarple1dmv.blimpl.DmvIngestor;
+import smarple1dmv.blimpl.DmvIngestorMgmt;
 import smarple1dmv.bo.JPATestBase;
 import smarple1dmv.bo.Location;
 import smarple1dmv.bo.Person;
@@ -19,6 +16,16 @@ public class DmvBlTest extends JPATestBase {
 
 	PersonDAO personDAO;
 	VehicleDAO vehicleDAO;
+	
+	@Override
+	public void setUp() throws Exception {
+		super.setUp();
+		
+		personDAO = new PersonDAO();
+		((PersonDAO)personDAO).setEntityManager(em);
+		vehicleDAO = new VehicleDAO();
+        ((VehicleDAO)vehicleDAO).setEntityManager(em);
+	}
 	
 	/**
 	 * This will run the test that checks the end to end scenario works. The
@@ -34,11 +41,6 @@ public class DmvBlTest extends JPATestBase {
 		super.cleanup();
 
 		// 2. populate (using DmvIngestor)
-		personDAO = new PersonDAO();
-		((PersonDAO)personDAO).setEntityManager(em);
-		vehicleDAO = new VehicleDAO();
-        ((VehicleDAO)vehicleDAO).setEntityManager(em);
-		
 		populateDB();
 				
 		// 3. addDriver (using DriverMgmtImpl)
@@ -79,25 +81,14 @@ public class DmvBlTest extends JPATestBase {
 		
 		// 9. getRegistrationByOwner (using VehicleMgmtImpl)
 		firstPerson.getRegistrations();
-		
 	}
 	
 	public void populateDB() throws Exception{
 		
-		em.getTransaction().begin();
-		
-		String fileName = "xml/dmv-all.xml";
-		InputStream is = Thread.currentThread()
-		                       .getContextClassLoader()
-		                       .getResourceAsStream(fileName);
-		assertNotNull(fileName + " not found", is);
-		
-		DmvIngestor ingestor = new DmvIngestor();
-		ingestor.setPersonDAO(personDAO);
-		ingestor.setVehicleDAO(vehicleDAO);
-		ingestor.setInputStream(is);
-		ingestor.ingest();
-		em.getTransaction().commit();
+		DmvIngestorMgmt ingestorMgr = new DmvIngestorMgmt();
+			
+		ingestorMgr.setPersonDAO(personDAO);
+		ingestorMgr.setVehicleDAO(vehicleDAO);
+		ingestorMgr.ingest();
 	}
-
 }

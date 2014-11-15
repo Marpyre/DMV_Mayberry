@@ -5,5 +5,26 @@
         <dependent-module archiveName="smarple1DmvEJB-1.0-SNAPSHOT.jar" deploy-path="/" handle="module:/resource/smarple1DmvEJB/smarple1DmvEJB">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="smarple1DmvImpl-1.0-SNAPSHOT.jar" deploy-path="/lib" handle="module:/resource/smarple1DmvImpl/smarple1DmvImpl">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-logging-1.1.1.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="eDmvTestUtil-4.0.0-20141112.093255-25.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/info/ejava/examples/projects/eDataShare/eDmvTestUtil/4.0.0-SNAPSHOT/eDmvTestUtil-4.0.0-SNAPSHOT.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="eDmvDTO-4.0.0-20141112.093233-25.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/info/ejava/examples/projects/eDataShare/eDmvDTO/4.0.0-SNAPSHOT/eDmvDTO-4.0.0-SNAPSHOT.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="jaxb-impl-2.1.9-brew.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/sun-jaxb/jaxb-impl/2.1.9-brew/jaxb-impl-2.1.9-brew.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="xercesImpl-2.9.1.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="smarple1DmvWAR-1.0-SNAPSHOT.war" deploy-path="/" handle="module:/resource/smarple1DmvWAR/smarple1DmvWAR">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
     </wb-module>
 </project-modules>

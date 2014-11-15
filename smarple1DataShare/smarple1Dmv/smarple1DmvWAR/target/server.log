@@ -1,0 +1,2 @@
+[14:32:00.498][info][DeployerRedeployMojo] Resolved container artifact org.codehaus.cargo:cargo-core-container-wildfly:jar:1.4.3 for container wildfly8x
+[14:32:01.067][info][dFly8xRemoteDeployer] The undeployment phase of the redeploy action has failed: org.codehaus.cargo.util.CargoException: Cannot undeploy deployable org.codehaus.cargo.container.jboss.deployable.JBossWAR[smarple1DmvWAR-1.0-SNAPSHOT.war]

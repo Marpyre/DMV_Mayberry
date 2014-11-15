@@ -1,12 +1,12 @@
 package smarple1dmv.bo;
 
-import java.util.List;
-
 import javax.persistence.*;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.junit.*;
+
+import smarple1dmv.blimpl.DmvUtil;
 
 public class JPATestBase {
 	private static Log log = LogFactory.getLog(JPATestBase.class);
@@ -24,12 +24,15 @@ public class JPATestBase {
 	public void setUp() throws Exception {
 		log.debug("Creating entity manager");
 		em = emf.createEntityManager();
+		
+		em.getTransaction().begin();
 		cleanup();
 	}
 
 	@After
 	public void tearDown() throws Exception {
 		log.debug("TearDown() started, em=" + em);
+		cleanup();
 		if (em != null && em.getTransaction().isActive()) {
 			EntityTransaction tx = em.getTransaction();
 			if (tx.getRollbackOnly()) {
@@ -50,56 +53,8 @@ public class JPATestBase {
         }
 	}
 
-	@SuppressWarnings("unchecked")
 	protected void cleanup() throws Exception {
-		em.getTransaction().begin();
-		
-		Query query = em.createQuery("select p from Photo p");
-		for (Photo p : (List<Photo>) query
-				.getResultList()) {
-			em.remove(p);
-		}
-		
-		em.flush();
-		
-		query = em.createQuery("select pd from PhysicalDetails pd");
-		for (PhysicalDetails pd : (List<PhysicalDetails>) query
-				.getResultList()) {
-			em.remove(pd);
-		}
-		
-		em.flush();
-	
-		query = em.createQuery("select r from Residence r");
-		for (Residence r : (List<Residence>) query
-				.getResultList()) {
-			em.remove(r);
-		}
-		
-		em.flush();
-		
-		query = em.createQuery("select l from Location l");
-		for (Location l : (List<Location>) query
-				.getResultList()) {
-			em.remove(l);
-		}
-		
-		em.flush();
-		
-		query = em.createQuery("select vr from VehicleRegistration vr");
-		for (VehicleRegistration reg : (List<VehicleRegistration>) query
-				.getResultList()) {
-			reg.getOwners().clear();
-			em.remove(reg);
-		}
-		
-		query = em.createQuery("select p from Person p");
-		for (Person person : (List<Person>) query.getResultList()) {
-			em.remove(person);
-		}
-		
-		em.flush();
-		
-		em.getTransaction().commit();
+		DmvUtil dmvUtil = new DmvUtil(em);
+		dmvUtil.resetDB();
 	}
 }

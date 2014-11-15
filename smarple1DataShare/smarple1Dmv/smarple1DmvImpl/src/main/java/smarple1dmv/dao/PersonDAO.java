@@ -43,6 +43,10 @@ public class PersonDAO implements IPersonDAO {
 		residence.setStartDate(startDate);
 		em.persist(residence);
 	}
+	
+	/*public void remove(Person person){
+		em.remove(person);
+	}*/
 
 	@SuppressWarnings("unchecked")
 	public List<Person> getPeople(int index, int count) {

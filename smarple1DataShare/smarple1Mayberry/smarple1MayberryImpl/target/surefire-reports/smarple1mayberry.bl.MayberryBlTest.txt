@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: smarple1mayberry.bl.MayberryBlTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.89 sec - in smarple1mayberry.bl.MayberryBlTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.41 sec - in smarple1mayberry.bl.MayberryBlTest

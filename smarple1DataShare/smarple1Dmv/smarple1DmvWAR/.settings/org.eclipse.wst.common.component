@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="smarple1DmvWAR">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <dependent-module archiveName="smarple1DmvEJB-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/smarple1DmvEJB/smarple1DmvEJB">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="smarple1DmvImpl-1.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/smarple1DmvImpl/smarple1DmvImpl">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="smarple1DmvWAR"/>
+        <property name="java-output-path" value="/smarple1DmvWAR/target/classes"/>
+    </wb-module>
+</project-modules>

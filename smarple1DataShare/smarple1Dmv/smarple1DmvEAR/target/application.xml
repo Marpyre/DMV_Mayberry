@@ -8,4 +8,10 @@
   <module>
     <ejb>smarple1DmvEJB-1.0-SNAPSHOT.jar</ejb>
   </module>
+  <module>
+    <web>
+      <web-uri>smarple1DmvWAR-1.0-SNAPSHOT.war</web-uri>
+      <context-root>/smarple1DmvWAR</context-root>
+    </web>
+  </module>
 </application>

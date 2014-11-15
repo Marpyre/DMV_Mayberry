@@ -1,1 +1,6 @@
+smarple1DmvTest\ITBase.class
+smarple1DmvTest\DriverMgmtIT.class
 smarple1DmvTest\ReservationIT.class
+smarple1DmvTest\VehicleMgmtIT.class
+smarple1DmvTest\DmvTestUtilIT.class
+smarple1DmvTest\PersonMgmtIT.class

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>Smarple1 DMV</display-name>
+  <servlet>
+    <description></description>
+    <display-name>DMVTactical</display-name>
+    <servlet-name>DMVTactical</servlet-name>
+    <servlet-class>web.DMVTactical</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DMVTactical</servlet-name>
+    <url-pattern>/DMVTactical</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DMVFederated</display-name>
+    <servlet-name>DMVFederated</servlet-name>
+    <servlet-class>web.DMVFederated</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DMVFederated</servlet-name>
+    <url-pattern>/DMVFederated</url-pattern>
+  </servlet-mapping>
+</web-app>

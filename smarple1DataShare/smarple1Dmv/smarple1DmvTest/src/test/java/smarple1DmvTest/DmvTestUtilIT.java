@@ -14,14 +14,16 @@ import org.slf4j.LoggerFactory;
 
 import smarple1DmvEJB.IDmvTestUtilRemote;
 
-public class DmvTestUtilIT extends ITBase{
+public class DmvTestUtilIT extends ITBase {
 	private static final Logger logger = LoggerFactory
 			.getLogger(DmvTestUtilIT.class);
 
 	private InitialContext jndi;
 
-	private static final String dmvTestUtilJDNI = System
-			.getProperty("jndi.name.dmvtestutil");
+	private static final String dmvTestUtilJDNI = System.getProperty(
+			"jndi.name.dmvtestutil",
+			"ejb:smarple1DmvEAR/smarple1DmvEJB/DmvTestUtilEJB!"
+					+ IDmvTestUtilRemote.class.getName());
 
 	private IDmvTestUtilRemote testUtilInterface;
 
@@ -50,7 +52,7 @@ public class DmvTestUtilIT extends ITBase{
 	@Test
 	public void resetAll() {
 		logger.info("*** resetAll ***");
-		
+
 		testUtilInterface.resetAll();
 
 		logger.info("*** resetAll complete ***");

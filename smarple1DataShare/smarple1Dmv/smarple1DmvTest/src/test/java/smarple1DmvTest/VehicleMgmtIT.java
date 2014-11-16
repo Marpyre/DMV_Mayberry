@@ -17,7 +17,10 @@ public class VehicleMgmtIT extends ITBase {
 
     private InitialContext jndi;
     
-    private static final String vehicleMgmtJNDI = System.getProperty("jndi.name.vehiclemgmt");
+    private static final String vehicleMgmtJNDI = System.getProperty(
+			"jndi.name.dmvtestutil",
+			"ejb:smarple1DmvEAR/smarple1DmvEJB/VehicleMgmtEJB!"
+					+ IVehicleMgmtRemote.class.getName());
     
     private IVehicleMgmtRemote vehicleManager;
 

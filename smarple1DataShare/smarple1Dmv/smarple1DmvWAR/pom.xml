@@ -24,12 +24,49 @@
 			<!-- <exclusions> server doesn't want to see already provided jars <exclusion> 
 				<groupId>org.slf4j</groupId> <artifactId>slf4j-api</artifactId> </exclusion> 
 				</exclusions> -->
+				<scope>provided</scope>
 		</dependency>
+
+		<dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <scope>provided</scope>
+        </dependency>
 		
-		<!-- core dependencies -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <scope>provided</scope>
+            <version>7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.ejb</groupId>
+            <artifactId>javax.ejb-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <scope>provided</scope>
+        </dependency> -->
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
             <scope>provided</scope>
         </dependency>
 
@@ -60,7 +97,8 @@
 	</dependencies>
 
 	<build>
-	<!-- filter test/resource files for profile-specific valies -->
+	<finalName>smarple1Dmv</finalName>
+	<!-- filter test/resource files for profile-specific values -->
         <testResources>
             <testResource>
                 <directory>src/test/resources</directory>
@@ -80,9 +118,10 @@
 		<plugins>
 			<!-- artifacts to deploy to server. this module by default -->
 			<plugin>
-				<groupId>org.codehaus.cargo</groupId>
-				<artifactId>cargo-maven2-plugin</artifactId>
-			</plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+
+                </plugin>
 		</plugins>
 	</build>
 </project>

@@ -1,4 +1,4 @@
-INFO  15-11 14:31:58,928 [smarple1DmvEJB.DmvTestUtilTest] (DmvTestUtilTest.java:testPing:22)  -*** testPing ***
-DEBUG 15-11 14:31:58,930 [smarple1DmvEJB.DmvTestUtilEJB] (DmvTestUtilEJB.java:ping:35)  -ping called
-INFO  15-11 14:31:58,933 [smarple1DmvEJB.ReservationTest] (ReservationTest.java:testPing:21)  -*** testPing ***
-DEBUG 15-11 14:31:58,934 [smarple1DmvEJB.ReservationEJB] (ReservationEJB.java:ping:25)  -ping called
+INFO  16-11 06:26:05,177 [smarple1DmvEJB.DmvTestUtilTest] (DmvTestUtilTest.java:testPing:22)  -*** testPing ***
+DEBUG 16-11 06:26:05,180 [smarple1DmvEJB.DmvTestUtilEJB] (DmvTestUtilEJB.java:ping:35)  -ping called
+INFO  16-11 06:26:05,183 [smarple1DmvEJB.ReservationTest] (ReservationTest.java:testPing:21)  -*** testPing ***
+DEBUG 16-11 06:26:05,183 [smarple1DmvEJB.ReservationEJB] (ReservationEJB.java:ping:25)  -ping called

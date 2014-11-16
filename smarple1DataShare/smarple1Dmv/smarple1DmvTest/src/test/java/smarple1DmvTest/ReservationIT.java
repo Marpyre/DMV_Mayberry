@@ -16,7 +16,10 @@ public class ReservationIT extends ITBase {
 
     private InitialContext jndi;
     
-    private static final String reservationJNDI = System.getProperty("jndi.name.reservation");
+    private static final String reservationJNDI = System.getProperty(
+			"jndi.name.dmvtestutil",
+			"ejb:smarple1DmvEAR/smarple1DmvEJB/ReservationEJB!"
+					+ IReservationRemote.class.getName());
     
     private IReservationRemote reservationist;
 

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Driver</title>
+</head>
+<body>
+	<form action="CommandDMVTactical" method="post">
+		<fieldset>
+			<legend>Driver Details:</legend>
+			<label>First Name: </label> <input type="text" name="fname" size="40" /> <br>
+			<label>Middle Name: </label> <input type="text" name="mname" size="40" /> <br>
+			<label>Last Name: </label> <input type="text" name="lname" size="40" /> <br>
+			<label>Name Suffix: </label> <input type="text" name="sname" size="40" /> <br>
+			<input type="hidden" name="command" value="add" />
+		</fieldset>
+		<input type="submit" value="Add Driver">
+	</form>
+	
+	<!-- Back Button -->
+	<form action="CommandDMVTactical">
+		<input type="submit" value="Back">
+	</form>
+</body>
+</html>

@@ -55,15 +55,15 @@
 			<type>ear</type>
 			<version>${project.version}</version>
 		</dependency>
-		
+
 		<!-- brings in the EJB-client jar file w/o the EJB -->
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>smarple1DmvEJB</artifactId>
-            <version>${project.version}</version>
-            <type>ejb-client</type>
-            <scope>test</scope>
-        </dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>smarple1DmvEJB</artifactId>
+			<version>${project.version}</version>
+			<type>ejb-client</type>
+			<scope>test</scope>
+		</dependency>
 
 	</dependencies>
 
@@ -88,15 +88,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
-				<configuration>
-					<systemPropertyVariables>
-						<jndi.name.reservation>ejb:smarple1DmvEAR-${project.version}/smarple1DmvEJB-${project.version}/ReservationEJB!smarple1DmvEJB.IReservationRemote</jndi.name.reservation>
-						<jndi.name.dmvtestutil>ejb:smarple1DmvEAR-${project.version}/smarple1DmvEJB-${project.version}/DmvTestUtilEJB!smarple1DmvEJB.IDmvTestUtilRemote</jndi.name.dmvtestutil>
-						<jndi.name.drivermgmt>ejb:smarple1DmvEAR-${project.version}/smarple1DmvEJB-${project.version}/DriverMgmtEJB!smarple1DmvEJB.IDriverMgmtRemote</jndi.name.drivermgmt>
-						<jndi.name.personmgmt>ejb:smarple1DmvEAR-${project.version}/smarple1DmvEJB-${project.version}/PersonMgmtEJB!smarple1DmvEJB.IPersonMgmtRemote</jndi.name.personmgmt>
-						<jndi.name.vehiclemgmt>ejb:smarple1DmvEAR-${project.version}/smarple1DmvEJB-${project.version}/VehicleMgmtEJB!smarple1DmvEJB.IVehicleMgmtRemote</jndi.name.vehiclemgmt>
-					</systemPropertyVariables>
-				</configuration>
 			</plugin>
 
 		</plugins>

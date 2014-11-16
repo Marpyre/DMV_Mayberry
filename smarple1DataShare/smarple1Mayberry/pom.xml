@@ -16,6 +16,7 @@
 	
 	<modules>
 		<module>smarple1MayberryImpl</module>
+		<module>smarple1MayberryWAR</module>
 	</modules>
 	
 </project>

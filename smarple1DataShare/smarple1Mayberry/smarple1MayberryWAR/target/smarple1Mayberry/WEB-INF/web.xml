@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>Smarple1 Mayberry</display-name>
+  <servlet>
+    <description></description>
+    <display-name>TestAdmin</display-name>
+    <servlet-name>TestAdmin</servlet-name>
+    <servlet-class>web.TestAdmin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestAdmin</servlet-name>
+    <url-pattern>/TestAdmin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MayberryTactical</display-name>
+    <servlet-name>MayberryTactical</servlet-name>
+    <servlet-class>web.MayberryTactical</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MayberryTactical</servlet-name>
+    <url-pattern>/MayberryTactical</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MayberryAnalytical</display-name>
+    <servlet-name>MayberryAnalytical</servlet-name>
+    <servlet-class>web.MayberryAnalytical</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MayberryAnalytical</servlet-name>
+    <url-pattern>/MayberryAnalytical</url-pattern>
+  </servlet-mapping>
+</web-app>

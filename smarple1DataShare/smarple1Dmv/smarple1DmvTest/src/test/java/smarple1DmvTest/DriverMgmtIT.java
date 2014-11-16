@@ -17,7 +17,10 @@ public class DriverMgmtIT extends ITBase {
 
     private InitialContext jndi;
     
-    private static final String driverMgmtJNDI = System.getProperty("jndi.name.drivermgmt");
+    private static final String driverMgmtJNDI = System.getProperty(
+			"jndi.name.dmvtestutil",
+			"ejb:smarple1DmvEAR/smarple1DmvEJB/DriverMgmtEJB!"
+					+ IDriverMgmtRemote.class.getName());
     
     private IDriverMgmtRemote driverManager;
 

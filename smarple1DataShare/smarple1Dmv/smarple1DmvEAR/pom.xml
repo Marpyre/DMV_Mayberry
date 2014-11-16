@@ -41,6 +41,21 @@
 				<artifactId>maven-ear-plugin</artifactId>
 				<configuration>
 					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<!-- eliminates use of version in EAR JNDI name portion -->
+					<applicationName>${project.artifactId}</applicationName>
+					<modules>
+						<!-- eliminates use of the version in the EJB JNDI name -->
+						<ejbModule>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>smarple1DmvEJB</artifactId>
+							<bundleFileName>smarple1DmvEJB</bundleFileName>
+						</ejbModule>
+						<webModule>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>smarple1DmvWAR</artifactId>
+							<contextRoot>smarple1Dmv</contextRoot>
+						</webModule>
+					</modules>
 				</configuration>
 			</plugin>
 		</plugins>

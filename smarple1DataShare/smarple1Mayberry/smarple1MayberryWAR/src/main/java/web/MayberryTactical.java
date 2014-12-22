@@ -2,6 +2,7 @@ package web;
 
 import java.io.IOException;
 
+import javax.naming.InitialContext;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,6 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import smarple1DmvEJB.IDmvTestUtilRemote;
+import smarple1MayberryEJB.POIRemote;
+
 @WebServlet("/CommandMayberryTactical/*")
 public class MayberryTactical extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -19,14 +23,13 @@ public class MayberryTactical extends HttpServlet {
 	private static final Log log = LogFactory.getLog(MayberryTactical.class);
 	public static final String COMMAND_PARAM = "command";
 
-	// private InitialContext jndi;
-	//
-	// private static final String dmvTestUtilJDNI = System.getProperty(
-	// "jndi.name.dmvtestutil",
-	// "ejb:smarple1DmvEAR/smarple1DmvEJB/DmvTestUtilEJB!"
-	// + IDmvTestUtilRemote.class.getName());
-	//
-	// private IDmvTestUtilRemote testUtilInterface;
+	// Mayberry EJB Interface
+	protected POIRemote poiInterface;
+
+	// Mayberry EJB JNDI
+	protected static final String poiJNDI = "ejb:/smarple1Mayberry/PoiEJB!smarple1MayberryEJB.POIRemote";
+
+	protected InitialContext jndi;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -47,12 +50,11 @@ public class MayberryTactical extends HttpServlet {
 		log.debug("command=" + command);
 
 		try {
-			// jndi = new InitialContext();
-			//
-			// jndi.lookup("jms");
-			//
-			// testUtilInterface = (IDmvTestUtilRemote) jndi
-			// .lookup(dmvTestUtilJDNI);
+			jndi = new InitialContext();
+
+			jndi.lookup("jms");
+
+			poiInterface = (POIRemote) jndi.lookup(poiJNDI);
 
 			if (command == null) {
 
@@ -60,7 +62,7 @@ public class MayberryTactical extends HttpServlet {
 
 			} else if (command.equals("createPOI")) {
 
-				// testUtilInterface.populate();
+				//poiInterface.addActivity(null, null);
 
 				request.setAttribute("msg", "POI Created");
 
@@ -72,13 +74,13 @@ public class MayberryTactical extends HttpServlet {
 
 			} else if (command.equals("getPOI")) {
 
-				// testUtilInterface.resetAll();
+				//poiInterface.getAllPOI(0, 0);
 
 				request.setAttribute("msg", "POI Information Retrieved");
 
 			} else if (command.equals("checkPOIDanger")) {
 
-				// testUtilInterface.resetAll();
+				//poiInterface.
 
 				request.setAttribute("msg", "POI Danger Check Completed");
 

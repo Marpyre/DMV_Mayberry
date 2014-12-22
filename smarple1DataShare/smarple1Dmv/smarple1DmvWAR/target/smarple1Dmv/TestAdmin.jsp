@@ -23,8 +23,8 @@
 	<br>
 
 	<%-- Back Button --%>
-	<form action="index.html">
-		<input type="submit" value="Back">
+	<form action="logout">
+		<input type="submit" value="DMV Home">
 	</form>
 	
 </body>

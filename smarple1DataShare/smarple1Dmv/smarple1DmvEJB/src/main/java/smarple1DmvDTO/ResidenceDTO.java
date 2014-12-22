@@ -4,34 +4,38 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class ResidenceDTO implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private long id;
-//	private Location location;
-//	private Person person;
+	private LocationDTO location;
+	private PersonDTO person;
 	private Date startDate;
 	private Date endDate;
-	
+
 	public long getId() {
 		return id;
 	}
 
-//	public Location getLocation() {
-//		return location;
-//	}
-//
-//	public void setLocation(Location location) {
-//		this.location = location;
-//	}
-//
-//	public Person getPerson() {
-//		return person;
-//	}
-//
-//	public void setPerson(Person person) {
-//		this.person = person;
-//	}
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public LocationDTO getLocation() {
+		return location;
+	}
+
+	public void setLocation(LocationDTO location) {
+		this.location = location;
+	}
+
+	public PersonDTO getPerson() {
+		return person;
+	}
+
+	public void setPerson(PersonDTO person) {
+		this.person = person;
+	}
 
 	public Date getStartDate() {
 		return startDate;
@@ -48,5 +52,5 @@ public class ResidenceDTO implements Serializable {
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
-	
+
 }

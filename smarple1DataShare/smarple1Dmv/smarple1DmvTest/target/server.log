@@ -1,1 +1,2 @@
-[06:26:07.447][info][DeployerRedeployMojo] Resolved container artifact org.codehaus.cargo:cargo-core-container-wildfly:jar:1.4.3 for container wildfly8x
+[19:59:12.978][info][DeployerRedeployMojo] Resolved container artifact org.codehaus.cargo:cargo-core-container-wildfly:jar:1.4.3 for container wildfly8x
+[19:59:13.706][info][dFly8xRemoteDeployer] The undeployment phase of the redeploy action has failed: org.codehaus.cargo.util.CargoException: Cannot undeploy deployable org.codehaus.cargo.container.deployable.EAR[smarple1DmvEAR-1.0-SNAPSHOT.ear]

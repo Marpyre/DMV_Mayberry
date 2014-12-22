@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Built-By: Marpyre
+Build-Jdk: 1.7.0_67
+Class-Path: smarple1DmvImpl-1.0-SNAPSHOT.jar commons-logging-1.1.1.jar
+  eDmvTestUtil-4.0.0-20141210.091103-33.jar eDmvDTO-4.0.0-20141210.091
+ 039-33.jar jaxb-impl-2.1.9-brew.jar xercesImpl-2.9.1.jar
+Created-By: Maven Integration for Eclipse
+

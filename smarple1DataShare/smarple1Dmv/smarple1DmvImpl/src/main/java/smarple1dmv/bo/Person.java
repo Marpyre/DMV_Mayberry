@@ -28,36 +28,35 @@ public class Person {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-	@Column(name="FIRST_NAME")
+
+	@Column(name = "FIRST_NAME")
 	private String firstName;
-	
-	@Column(name="MIDDLE_NAME")
+
+	@Column(name = "MIDDLE_NAME")
 	private String middleName;
-	
-	@Column(name="LAST_NAME")
+
+	@Column(name = "LAST_NAME")
 	private String lastName;
-	
-	@Column(name="NAME_SUFFIX")
+
+	@Column(name = "NAME_SUFFIX")
 	private String nameSuffix;
-	
-	@ManyToMany(cascade={CascadeType.PERSIST}, fetch=FetchType.LAZY)
-	@JoinTable(name="smarple1dmv_vehicle_owner_link",
-		joinColumns=@JoinColumn(name="PERSON_ID"),
-		inverseJoinColumns=@JoinColumn(name="VEHICLE_ID"))
+
+	@ManyToMany(cascade = { CascadeType.PERSIST }, fetch = FetchType.LAZY)
+	@JoinTable(name = "smarple1dmv_vehicle_owner_link", joinColumns = @JoinColumn(name = "PERSON_ID"), inverseJoinColumns = @JoinColumn(name = "VEHICLE_ID"))
 	private Set<VehicleRegistration> registrations;
 
 	@Transient
-	private Residence currentResidence;
-	
-	@Transient
 	private Collection<Residence> residences;
-	
+
 	@Transient
 	private PhysicalDetails physicalDetails;
 
 	public long getId() {
 		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getFirstName() {
@@ -92,15 +91,10 @@ public class Person {
 		this.nameSuffix = nameSuffix;
 	}
 
-	public Residence getCurrentResidence() {
-		return currentResidence;
-	}
-
-	public void setCurrentResidence(Residence currentResidence) {
-		this.currentResidence = currentResidence;
-	}
-
 	public Collection<Residence> getResidences() {
+		if (residences == null) {
+			return new HashSet<Residence>();
+		}
 		return residences;
 	}
 
@@ -115,14 +109,24 @@ public class Person {
 	public void setPhysicalDetails(PhysicalDetails physicalDetails) {
 		this.physicalDetails = physicalDetails;
 	}
-	
+
 	public Set<VehicleRegistration> getRegistrations() {
-		if(registrations == null){ registrations = new HashSet<VehicleRegistration>();}
+		if (registrations == null) {
+			registrations = new HashSet<VehicleRegistration>();
+		}
 		return registrations;
 	}
-	
+
 	public void addRegistration(VehicleRegistration vr) {
-		if(registrations == null){ registrations = new HashSet<VehicleRegistration>();}
+		if (registrations == null) {
+			registrations = new HashSet<VehicleRegistration>();
+		}
 		registrations.add(vr);
+	}
+
+	@Override
+	public String toString() {
+		return "[" + this.id + "," + this.firstName + "," + this.middleName
+				+ "," + this.lastName + "," + this.nameSuffix + "]";
 	}
 }

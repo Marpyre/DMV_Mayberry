@@ -18,37 +18,42 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "smarple1dmv_residence")
 public class Residence {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-	@OneToOne(optional=false,fetch=FetchType.LAZY)
-    @JoinColumn(name="LOCATION_ID", referencedColumnName="ID")
+
+	@OneToOne(optional = false, fetch = FetchType.LAZY)
+	@JoinColumn(name = "LOCATION_ID", referencedColumnName = "ID")
 	private Location location;
-	
-	//Uni-directional Many to One Association to Person
+
+	// Uni-directional Many to One Association to Person
 	@ManyToOne
 	@JoinColumn(name = "PERSON_ID")
 	private Person person;
-	
-	@Column(name="START_DATE")
+
+	@Column(name = "START_DATE")
 	@Temporal(TemporalType.DATE)
 	private Date startDate;
-	
-	@Column(name="END_DATE")
+
+	@Column(name = "END_DATE")
 	@Temporal(TemporalType.DATE)
 	private Date endDate;
-	
-	public Residence(){}
-	
-	public Residence(Person person, Location location){
+
+	public Residence() {
+	}
+
+	public Residence(Person person, Location location) {
 		this.person = person;
 		this.location = location;
 	}
-	
+
 	public long getId() {
 		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public Location getLocation() {
@@ -58,7 +63,7 @@ public class Residence {
 	public void setLocation(Location location) {
 		this.location = location;
 	}
-	
+
 	public Person getPerson() {
 		return person;
 	}
@@ -82,6 +87,4 @@ public class Residence {
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
-
-	
 }

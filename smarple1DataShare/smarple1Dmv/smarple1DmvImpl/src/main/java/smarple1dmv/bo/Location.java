@@ -16,7 +16,7 @@ public class Location {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	@Column(name = "STREET_NO")
 	private int streetNo;
 
@@ -40,7 +40,11 @@ public class Location {
 	public long getId() {
 		return id;
 	}
-	
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	public int getStreetNo() {
 		return streetNo;
 	}
@@ -71,6 +75,16 @@ public class Location {
 
 	public void setState(STATE state) {
 		this.state = state;
+	}
+
+	public void setState(String state) {
+		if (state != null) {
+			if (state.equalsIgnoreCase("md")) {
+				this.state = STATE.MD;
+			} else if (state.equalsIgnoreCase("va")) {
+				this.state = STATE.VA;
+			}
+		}
 	}
 
 	public String getZip() {

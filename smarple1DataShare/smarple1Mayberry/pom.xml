@@ -15,7 +15,6 @@
 	<description>Smarple1 Mayberry Module</description>
 	
 	<modules>
-		<module>smarple1MayberryImpl</module>
 		<module>smarple1MayberryWAR</module>
 	</modules>
 	

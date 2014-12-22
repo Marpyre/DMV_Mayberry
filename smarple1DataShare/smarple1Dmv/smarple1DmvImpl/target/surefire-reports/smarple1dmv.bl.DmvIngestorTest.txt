@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: smarple1dmv.bl.DmvIngestorTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.653 sec - in smarple1dmv.bl.DmvIngestorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.077 sec - in smarple1dmv.bl.DmvIngestorTest

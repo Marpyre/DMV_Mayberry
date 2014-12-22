@@ -3,27 +3,24 @@ package smarple1DmvDTO;
 import java.io.Serializable;
 import java.util.Date;
 
-import smarple1dmv.bo.PhysicalDetails.COLOR;
-import smarple1dmv.bo.PhysicalDetails.SEX;
-
 public class PhysicalDetailsDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
 	//private Person person;
-	private SEX sex;
+	private String sex;
 	private Date dob;
 	private int height;
 	private int weight;
-	private COLOR eyeColor;
-	private COLOR hairColor;
+	private String eyeColor;
+	private String hairColor;
 	private byte[] photo;
 	
-	public SEX getSex() {
+	public String getSex() {
 		return sex;
 	}
 	
-	public void setSex(SEX sex) {
+	public void setSex(String sex) {
 		this.sex = sex;
 	}
 
@@ -51,19 +48,19 @@ public class PhysicalDetailsDTO implements Serializable {
 		this.weight = weight;
 	}
 
-	public COLOR getEyeColor() {
+	public String getEyeColor() {
 		return eyeColor;
 	}
 
-	public void setEyeColor(COLOR eyeColor) {
+	public void setEyeColor(String eyeColor) {
 		this.eyeColor = eyeColor;
 	}
 
-	public COLOR getHairColor() {
+	public String getHairColor() {
 		return hairColor;
 	}
 
-	public void setHairColor(COLOR hairColor) {
+	public void setHairColor(String hairColor) {
 		this.hairColor = hairColor;
 	}
 

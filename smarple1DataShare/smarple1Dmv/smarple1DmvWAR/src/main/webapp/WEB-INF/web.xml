@@ -21,4 +21,48 @@
     <servlet-name>DMVFederated</servlet-name>
     <url-pattern>/DMVFederated</url-pattern>
   </servlet-mapping>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>admin-only</web-resource-name>
+      <url-pattern>/Admin/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+    <user-data-constraint>
+      <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>DMVTactical-only</web-resource-name>
+      <url-pattern>/CommandDMVTactical/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>dmv-tactical</role-name>
+    </auth-constraint>
+    <user-data-constraint>
+      <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+    <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>DMVFederated-only</web-resource-name>
+      <url-pattern>/CommandDMVFederated/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>dmv-tactical</role-name>
+      <role-name>dmv-federated</role-name>
+    </auth-constraint>
+    <user-data-constraint>
+      <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+    </user-data-constraint>
+  </security-constraint>
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>/WEB-INF/login/login.jsp</form-login-page>
+      <form-error-page>/WEB-INF/login/login.jsp</form-error-page>
+    </form-login-config>
+  </login-config>
 </web-app>

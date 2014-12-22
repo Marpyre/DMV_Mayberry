@@ -21,8 +21,8 @@ import ejava.projects.edmv.xml.EDmvParser;
 import info.ejava.projects.edmv._1.Dmv;
 
 /**
- * This class is a modified parser from the class example.
- * It ingests the information from the XML file to populate the database.
+ * This class is a modified parser from the class example. It ingests the
+ * information from the XML file to populate the database.
  *
  */
 public class DmvIngestor {
@@ -87,6 +87,12 @@ public class DmvIngestor {
 		Person personBO = new Person();
 		personBO.setLastName(personDTO.getPersonName().getPersonSurName()
 				.getValue());
+		personBO.setFirstName(personDTO.getPersonName().getPersonGivenName()
+				.getValue());
+		personBO.setMiddleName(personDTO.getPersonName().getPersonMiddleName()
+				.getValue());
+		personBO.setNameSuffix(personDTO.getPersonName().getPersonSuffixName()
+				.getValue());
 
 		personDAO.createPerson(personBO);
 		log.debug("created person:" + personBO);
@@ -110,6 +116,12 @@ public class DmvIngestor {
 		VehicleRegistration registrationBO = new VehicleRegistration();
 		registrationBO.setVin(registrationDTO.getVehicle().getVehicleID()
 				.getID().getValue());
+		registrationBO.setColor(registrationDTO.getVehicle().getVehicleColorPrimaryCode().getValue());
+		registrationBO.setMake(registrationDTO.getVehicle().getVehicleMakeCode().getValue());
+		registrationBO.setModel(registrationDTO.getVehicle().getVehicleModelCode().getValue());
+		//not sure how to map the rest...
+		//registrationBO.setYear(registrationDTO.getVehicle().getVehicleModelYearDate().getValue().toString());
+		//registrationBO.setTagNo(registrationDTO.getVehicleLicensePlateID().getID().getValue());
 
 		// add the m-m owners
 		for (gov.ojp.it.jxdm._3_0.ReferenceType ref : registrationDTO
@@ -127,7 +139,7 @@ public class DmvIngestor {
 		vehicleDAO.createRegistration(registrationBO);
 		log.debug("created registration:" + registrationBO);
 
-		for(Person ownerBO : registrationBO.getOwners()){
+		for (Person ownerBO : registrationBO.getOwners()) {
 			ownerBO.addRegistration(registrationBO);
 			personDAO.update(ownerBO);
 		}

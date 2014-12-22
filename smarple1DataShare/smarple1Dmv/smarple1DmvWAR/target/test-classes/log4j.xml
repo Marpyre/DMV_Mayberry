@@ -21,7 +21,7 @@
    </appender>
 
    <logger name="smarple1DmvTest">
-      <level value="debug"/>
+      <level value="info"/>
       <appender-ref ref="logfile"/>  
    </logger>
    <root>

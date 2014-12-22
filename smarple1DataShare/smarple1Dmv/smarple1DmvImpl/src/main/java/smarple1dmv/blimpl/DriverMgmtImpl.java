@@ -30,6 +30,10 @@ public class DriverMgmtImpl implements IPersonMgmt{
             log.error("error getting people", ex);
             throw new DmvException("error getting people:" + ex);
         }*/
-    }   
+    } 
+    
+    public void createPerson(Person person){
+    	personDAO.createPerson(person);
+    }
 
 }

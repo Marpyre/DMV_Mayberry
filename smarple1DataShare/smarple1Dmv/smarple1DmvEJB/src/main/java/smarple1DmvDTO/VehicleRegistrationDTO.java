@@ -3,8 +3,6 @@ package smarple1DmvDTO;
 import java.io.Serializable;
 import java.util.Date;
 
-import smarple1dmv.bo.VehicleRegistration.COLOR;
-
 public class VehicleRegistrationDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -14,12 +12,15 @@ public class VehicleRegistrationDTO implements Serializable {
 	private String vin;
 	private String make;
 	private String model;
-	private COLOR color;
+	private String color;
 	private Date year;
 	private Date expiration;
 	
 	public long getId() {
 		return id;
+	}
+	public void setId(long id){
+		this.id = id;
 	}
 	public String getTagNo() {
 		return tagNo;
@@ -45,10 +46,10 @@ public class VehicleRegistrationDTO implements Serializable {
 	public void setModel(String model) {
 		this.model = model;
 	}
-	public COLOR getColor() {
+	public String getColor() {
 		return color;
 	}
-	public void setColor(COLOR color) {
+	public void setColor(String color) {
 		this.color = color;
 	}
 	public Date getYear() {
@@ -62,5 +63,8 @@ public class VehicleRegistrationDTO implements Serializable {
 	}
 	public void setExpiration(Date expiration) {
 		this.expiration = expiration;
+	}
+	public String toString(){
+		return "ID:" + this.id + ",Make:" + this.make + ",Model:" + this.model + ",TagNo:" + this.tagNo + ",Vin:" + this.vin + ",Year:" + this.year + ",Color:" + this.color + ",Expiration:" + this.expiration;
 	}
 }

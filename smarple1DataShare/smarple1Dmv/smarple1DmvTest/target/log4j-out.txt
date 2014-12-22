@@ -1,52 +1,42 @@
-DEBUG 16-11 06:26:09,951 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:setUp:34)  -getting jndi initial context
-DEBUG 16-11 06:26:10,130 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:setUp:36)  -jndi={java.naming.factory.initial=org.jboss.naming.remote.client.InitialContextFactory, java.naming.provider.url=http-remoting://127.0.0.1:8080, java.naming.factory.url.pkgs=org.jboss.ejb.client.naming, jboss.naming.client.ejb.context=true}
-DEBUG 16-11 06:26:10,388 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:setUp:39)  -jndi name:ejb:smarple1DmvEAR/smarple1DmvEJB/DmvTestUtilEJB!smarple1DmvEJB.IDmvTestUtilRemote
-DEBUG 16-11 06:26:10,402 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:setUp:42)  -testUtilInterface=Proxy for remote EJB StatelessEJBLocator{appName='smarple1DmvEAR', moduleName='smarple1DmvEJB', distinctName='', beanName='DmvTestUtilEJB', view='interface smarple1DmvEJB.IDmvTestUtilRemote'}
-INFO  16-11 06:26:10,402 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:testPing:47)  -*** testPing ***
-DEBUG 16-11 06:26:10,452 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:setUp:34)  -getting jndi initial context
-DEBUG 16-11 06:26:10,453 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:setUp:36)  -jndi={java.naming.factory.initial=org.jboss.naming.remote.client.InitialContextFactory, java.naming.provider.url=http-remoting://127.0.0.1:8080, java.naming.factory.url.pkgs=org.jboss.ejb.client.naming, jboss.naming.client.ejb.context=true}
-DEBUG 16-11 06:26:10,467 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:setUp:39)  -jndi name:ejb:smarple1DmvEAR/smarple1DmvEJB/DmvTestUtilEJB!smarple1DmvEJB.IDmvTestUtilRemote
-DEBUG 16-11 06:26:10,467 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:setUp:42)  -testUtilInterface=Proxy for remote EJB StatelessEJBLocator{appName='smarple1DmvEAR', moduleName='smarple1DmvEJB', distinctName='', beanName='DmvTestUtilEJB', view='interface smarple1DmvEJB.IDmvTestUtilRemote'}
-INFO  16-11 06:26:10,468 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:resetAll:54)  -*** resetAll ***
-INFO  16-11 06:26:10,476 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:resetAll:58)  -*** resetAll complete ***
-DEBUG 16-11 06:26:10,477 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:setUp:34)  -getting jndi initial context
-DEBUG 16-11 06:26:10,479 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:setUp:36)  -jndi={java.naming.factory.initial=org.jboss.naming.remote.client.InitialContextFactory, java.naming.provider.url=http-remoting://127.0.0.1:8080, java.naming.factory.url.pkgs=org.jboss.ejb.client.naming, jboss.naming.client.ejb.context=true}
-DEBUG 16-11 06:26:10,491 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:setUp:39)  -jndi name:ejb:smarple1DmvEAR/smarple1DmvEJB/DmvTestUtilEJB!smarple1DmvEJB.IDmvTestUtilRemote
-DEBUG 16-11 06:26:10,491 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:setUp:42)  -testUtilInterface=Proxy for remote EJB StatelessEJBLocator{appName='smarple1DmvEAR', moduleName='smarple1DmvEJB', distinctName='', beanName='DmvTestUtilEJB', view='interface smarple1DmvEJB.IDmvTestUtilRemote'}
-INFO  16-11 06:26:10,491 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:populate:64)  -*** populate ***
-INFO  16-11 06:26:11,554 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:populate:68)  -*** populate complete ***
-DEBUG 16-11 06:26:12,026 [smarple1DmvTest.DriverMgmtIT] (DriverMgmtIT.java:setUp:31)  -getting jndi initial context
-DEBUG 16-11 06:26:12,028 [smarple1DmvTest.DriverMgmtIT] (DriverMgmtIT.java:setUp:33)  -jndi={java.naming.factory.initial=org.jboss.naming.remote.client.InitialContextFactory, java.naming.provider.url=http-remoting://127.0.0.1:8080, java.naming.factory.url.pkgs=org.jboss.ejb.client.naming, jboss.naming.client.ejb.context=true}
-DEBUG 16-11 06:26:12,041 [smarple1DmvTest.DriverMgmtIT] (DriverMgmtIT.java:setUp:36)  -jndi name:ejb:smarple1DmvEAR/smarple1DmvEJB/DriverMgmtEJB!smarple1DmvEJB.IDriverMgmtRemote
-DEBUG 16-11 06:26:12,043 [smarple1DmvTest.DriverMgmtIT] (DriverMgmtIT.java:setUp:39)  -driverManager=Proxy for remote EJB StatelessEJBLocator{appName='smarple1DmvEAR', moduleName='smarple1DmvEJB', distinctName='', beanName='DriverMgmtEJB', view='interface smarple1DmvEJB.IDriverMgmtRemote'}
-INFO  16-11 06:26:12,044 [smarple1DmvTest.DriverMgmtIT] (DriverMgmtIT.java:testPing:44)  -*** testPing ***
-DEBUG 16-11 06:26:12,068 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:setUp:33)  -getting jndi initial context
-DEBUG 16-11 06:26:12,069 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:setUp:35)  -jndi={java.naming.factory.initial=org.jboss.naming.remote.client.InitialContextFactory, java.naming.provider.url=http-remoting://127.0.0.1:8080, java.naming.factory.url.pkgs=org.jboss.ejb.client.naming, jboss.naming.client.ejb.context=true}
-DEBUG 16-11 06:26:12,083 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:setUp:38)  -jndi name:ejb:smarple1DmvEAR/smarple1DmvEJB/PersonMgmtEJB!smarple1DmvEJB.IPersonMgmtRemote
-DEBUG 16-11 06:26:12,085 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:setUp:41)  -personManager=Proxy for remote EJB StatelessEJBLocator{appName='smarple1DmvEAR', moduleName='smarple1DmvEJB', distinctName='', beanName='PersonMgmtEJB', view='interface smarple1DmvEJB.IPersonMgmtRemote'}
-INFO  16-11 06:26:12,085 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:testGetPerson:53)  -*** testGetPerson ***
-DEBUG 16-11 06:26:12,089 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:setUp:33)  -getting jndi initial context
-DEBUG 16-11 06:26:12,091 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:setUp:35)  -jndi={java.naming.factory.initial=org.jboss.naming.remote.client.InitialContextFactory, java.naming.provider.url=http-remoting://127.0.0.1:8080, java.naming.factory.url.pkgs=org.jboss.ejb.client.naming, jboss.naming.client.ejb.context=true}
-DEBUG 16-11 06:26:12,104 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:setUp:38)  -jndi name:ejb:smarple1DmvEAR/smarple1DmvEJB/PersonMgmtEJB!smarple1DmvEJB.IPersonMgmtRemote
-DEBUG 16-11 06:26:12,104 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:setUp:41)  -personManager=Proxy for remote EJB StatelessEJBLocator{appName='smarple1DmvEAR', moduleName='smarple1DmvEJB', distinctName='', beanName='PersonMgmtEJB', view='interface smarple1DmvEJB.IPersonMgmtRemote'}
-INFO  16-11 06:26:12,105 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:testPing:46)  -*** testPing ***
-DEBUG 16-11 06:26:12,108 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:setUp:33)  -getting jndi initial context
-DEBUG 16-11 06:26:12,109 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:setUp:35)  -jndi={java.naming.factory.initial=org.jboss.naming.remote.client.InitialContextFactory, java.naming.provider.url=http-remoting://127.0.0.1:8080, java.naming.factory.url.pkgs=org.jboss.ejb.client.naming, jboss.naming.client.ejb.context=true}
-DEBUG 16-11 06:26:12,122 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:setUp:38)  -jndi name:ejb:smarple1DmvEAR/smarple1DmvEJB/PersonMgmtEJB!smarple1DmvEJB.IPersonMgmtRemote
-DEBUG 16-11 06:26:12,122 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:setUp:41)  -personManager=Proxy for remote EJB StatelessEJBLocator{appName='smarple1DmvEAR', moduleName='smarple1DmvEJB', distinctName='', beanName='PersonMgmtEJB', view='interface smarple1DmvEJB.IPersonMgmtRemote'}
-INFO  16-11 06:26:12,122 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:testPersonLogic:67)  -*** person logic ***
-DEBUG 16-11 06:26:12,156 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:setUp:33)  -getting jndi initial context
-DEBUG 16-11 06:26:12,158 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:setUp:35)  -jndi={java.naming.factory.initial=org.jboss.naming.remote.client.InitialContextFactory, java.naming.provider.url=http-remoting://127.0.0.1:8080, java.naming.factory.url.pkgs=org.jboss.ejb.client.naming, jboss.naming.client.ejb.context=true}
-DEBUG 16-11 06:26:12,171 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:setUp:38)  -jndi name:ejb:smarple1DmvEAR/smarple1DmvEJB/PersonMgmtEJB!smarple1DmvEJB.IPersonMgmtRemote
-DEBUG 16-11 06:26:12,171 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:setUp:41)  -personManager=Proxy for remote EJB StatelessEJBLocator{appName='smarple1DmvEAR', moduleName='smarple1DmvEJB', distinctName='', beanName='PersonMgmtEJB', view='interface smarple1DmvEJB.IPersonMgmtRemote'}
-INFO  16-11 06:26:12,171 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:testGetPersonByName:60)  -*** testGetPersonByName ***
-DEBUG 16-11 06:26:12,194 [smarple1DmvTest.ReservationIT] (ReservationIT.java:setUp:30)  -getting jndi initial context
-DEBUG 16-11 06:26:12,196 [smarple1DmvTest.ReservationIT] (ReservationIT.java:setUp:32)  -jndi={java.naming.factory.initial=org.jboss.naming.remote.client.InitialContextFactory, java.naming.provider.url=http-remoting://127.0.0.1:8080, java.naming.factory.url.pkgs=org.jboss.ejb.client.naming, jboss.naming.client.ejb.context=true}
-DEBUG 16-11 06:26:12,210 [smarple1DmvTest.ReservationIT] (ReservationIT.java:setUp:35)  -jndi name:ejb:smarple1DmvEAR/smarple1DmvEJB/ReservationEJB!smarple1DmvEJB.IReservationRemote
-DEBUG 16-11 06:26:12,211 [smarple1DmvTest.ReservationIT] (ReservationIT.java:setUp:38)  -reservationist=Proxy for remote EJB StatelessEJBLocator{appName='smarple1DmvEAR', moduleName='smarple1DmvEJB', distinctName='', beanName='ReservationEJB', view='interface smarple1DmvEJB.IReservationRemote'}
-INFO  16-11 06:26:12,211 [smarple1DmvTest.ReservationIT] (ReservationIT.java:testPing:43)  -*** testPing ***
-DEBUG 16-11 06:26:12,233 [smarple1DmvTest.VehicleMgmtIT] (VehicleMgmtIT.java:setUp:31)  -getting jndi initial context
-DEBUG 16-11 06:26:12,234 [smarple1DmvTest.VehicleMgmtIT] (VehicleMgmtIT.java:setUp:33)  -jndi={java.naming.factory.initial=org.jboss.naming.remote.client.InitialContextFactory, java.naming.provider.url=http-remoting://127.0.0.1:8080, java.naming.factory.url.pkgs=org.jboss.ejb.client.naming, jboss.naming.client.ejb.context=true}
-DEBUG 16-11 06:26:12,247 [smarple1DmvTest.VehicleMgmtIT] (VehicleMgmtIT.java:setUp:36)  -jndi name:ejb:smarple1DmvEAR/smarple1DmvEJB/VehicleMgmtEJB!smarple1DmvEJB.IVehicleMgmtRemote
-DEBUG 16-11 06:26:12,248 [smarple1DmvTest.VehicleMgmtIT] (VehicleMgmtIT.java:setUp:39)  -vehicleManager=Proxy for remote EJB StatelessEJBLocator{appName='smarple1DmvEAR', moduleName='smarple1DmvEJB', distinctName='', beanName='VehicleMgmtEJB', view='interface smarple1DmvEJB.IVehicleMgmtRemote'}
-INFO  16-11 06:26:12,249 [smarple1DmvTest.VehicleMgmtIT] (VehicleMgmtIT.java:testPing:44)  -*** testPing ***
+INFO  13-12 19:59:17,155 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:17,622 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:20,126 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:20,127 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:checkAccessRestrictions:57)  -*** checkAccessRestrictions ***
+INFO  13-12 19:59:20,128 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:20,243 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:checkAccessRestrictions:66)  -*** Caught EJB Access Error! ***
+INFO  13-12 19:59:20,243 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:checkAccessRestrictions:69)  -*** checkAccessRestrictions Complete ***
+INFO  13-12 19:59:20,244 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:21,280 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:22,580 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:22,582 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:testPing:37)  -*** testPing ***
+INFO  13-12 19:59:22,600 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:23,246 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:24,337 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:24,338 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:resetAll:43)  -*** resetAll ***
+INFO  13-12 19:59:24,846 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:resetAll:45)  -*** resetAll complete ***
+INFO  13-12 19:59:24,847 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:24,898 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:25,862 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:25,864 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:populate:50)  -*** populate ***
+INFO  13-12 19:59:26,808 [smarple1DmvTest.DmvTestUtilIT] (DmvTestUtilIT.java:populate:52)  -*** populate complete ***
+INFO  13-12 19:59:26,810 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:27,707 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:28,497 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:28,499 [smarple1DmvTest.DriverMgmtIT] (DriverMgmtIT.java:testPing:33)  -*** testPing ***
+INFO  13-12 19:59:28,529 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:28,946 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:29,696 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:testPing:36)  -*** testPing ***
+INFO  13-12 19:59:29,697 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:29,715 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:30,073 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:30,802 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:testPersonLogic:50)  -*** person logic ***
+INFO  13-12 19:59:30,803 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:30,827 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:31,240 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:31,981 [smarple1DmvTest.PersonMgmtIT] (PersonMgmtIT.java:testGetPersonByName:43)  -*** testGetPersonByName ***
+INFO  13-12 19:59:31,982 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:32,009 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:32,407 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:33,108 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor
+INFO  13-12 19:59:33,109 [smarple1DmvTest.VehicleMgmtIT] (VehicleMgmtIT.java:testPing:33)  -*** testPing ***
+INFO  13-12 19:59:33,124 [smarple1DmvTest.BasicCallbackHandler] (BasicCallbackHandler.java:<init>:27)  -BasicCallbackHandler:constructor

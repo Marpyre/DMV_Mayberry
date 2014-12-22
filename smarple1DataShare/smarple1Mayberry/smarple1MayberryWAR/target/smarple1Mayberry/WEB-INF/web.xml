@@ -1,34 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
-  <display-name>Smarple1 Mayberry</display-name>
-  <servlet>
-    <description></description>
-    <display-name>TestAdmin</display-name>
-    <servlet-name>TestAdmin</servlet-name>
-    <servlet-class>web.TestAdmin</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>TestAdmin</servlet-name>
-    <url-pattern>/TestAdmin</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>MayberryTactical</display-name>
-    <servlet-name>MayberryTactical</servlet-name>
-    <servlet-class>web.MayberryTactical</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>MayberryTactical</servlet-name>
-    <url-pattern>/MayberryTactical</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>MayberryAnalytical</display-name>
-    <servlet-name>MayberryAnalytical</servlet-name>
-    <servlet-class>web.MayberryAnalytical</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>MayberryAnalytical</servlet-name>
-    <url-pattern>/MayberryAnalytical</url-pattern>
-  </servlet-mapping>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<display-name>Smarple1 Mayberry</display-name>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>admin-only</web-resource-name>
+			<url-pattern>/Admin/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>admin</role-name>
+		</auth-constraint>
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>MayberryTactical-only</web-resource-name>
+			<url-pattern>/CommandMayberryTactical/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>mayberry-tactical</role-name>
+		</auth-constraint>
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/WEB-INF/login/login.jsp</form-login-page>
+			<form-error-page>/WEB-INF/login/login.jsp</form-error-page>
+		</form-login-config>
+	</login-config>
 </web-app>

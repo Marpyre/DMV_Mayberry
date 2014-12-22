@@ -4,6 +4,7 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" version="2.0">
     <persistence-unit name="bo">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
         <class>smarple1dmv.bo.Person</class>
         <class>smarple1dmv.bo.Photo</class>
         <class>smarple1dmv.bo.PhysicalDetails</class>
@@ -12,6 +13,7 @@
         <class>smarple1dmv.bo.VehicleRegistration</class>
         <properties>
            <!-- defined in src/test/resources/hibernate.properties -->
+           <property name="hibernate.dialect" value="${hibernate.dialect}"/>
         </properties>
     </persistence-unit>            
 </persistence>

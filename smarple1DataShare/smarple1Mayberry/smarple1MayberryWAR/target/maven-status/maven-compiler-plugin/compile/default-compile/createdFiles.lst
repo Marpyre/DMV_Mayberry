@@ -1,3 +1,13 @@
+web\MayberryAnalytical.class
+smarple1MayberryBL\BLImpl.class
+smarple1MayberryBO\POI.class
+smarple1MayberryJMS\DMVListener.class
+smarple1MayberryEJB\POIRemote.class
+web\Logout.class
+smarple1MayberryBO\Activity.class
 web\TestAdmin.class
 web\MayberryTactical.class
-web\MayberryAnalytical.class
+smarple1MayberryBO\Activity$Code.class
+smarple1MayberryJMS\POIListener.class
+smarple1MayberryJMS\Publisher.class
+smarple1MayberryEJB\PoiEJB.class

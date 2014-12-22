@@ -1,0 +1,6 @@
+smarple1Mayberry\integration\ITBase.class
+smarple1Mayberry\integration\BasicCallbackHandler.class
+smarple1Mayberry\integration\JMSPublisherIT.class
+smarple1Mayberry\integration\Proj3EndToEndIT.class
+smarple1Mayberry\bl\MayberryBlTest.class
+smarple1Mayberry\integration\EndToEndIT.class

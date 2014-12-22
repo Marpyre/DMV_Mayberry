@@ -1,15 +1,14 @@
+smarple1DmvJMS\Publisher.class
 smarple1DmvEJB\IDmvTestUtilRemote.class
 smarple1DmvEJB\IPersonMgmtRemote.class
 smarple1DmvDTO\PersonDTO.class
 smarple1DmvEJB\DmvTestUtilEJB.class
 smarple1DmvEJB\PersonMgmtEJB.class
-smarple1DmvEJB\IReservationRemote.class
+smarple1DmvDTO\LocationDTO.class
 smarple1DmvEJB\IDriverMgmtLocal.class
-smarple1DmvEJB\ReservationEJB.class
 smarple1DmvDTO\ResidenceDTO.class
 smarple1DmvEJB\IDmvTestUtilLocal.class
 smarple1DmvEJB\IVehicleMgmtRemote.class
-smarple1DmvEJB\IReservationLocal.class
 smarple1DmvEJB\DriverMgmtEJB.class
 smarple1DmvEJB\IPersonMgmtLocal.class
 smarple1DmvEJB\IDriverMgmtRemote.class

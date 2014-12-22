@@ -2,8 +2,6 @@ package smarple1DmvDTO;
 
 import java.io.Serializable;
 
-import smarple1dmv.bo.Person;
-
 public class PersonDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -14,16 +12,9 @@ public class PersonDTO implements Serializable {
 	private String lastName;
 	private String nameSuffix;
 	
-	public PersonDTO(){}
-	
-	public PersonDTO(Person person){
-		this.id = person.getId();
-		this.firstName = person.getFirstName();
-		this.middleName = person.getMiddleName();
-		this.lastName = person.getMiddleName();
-		this.nameSuffix = person.getNameSuffix();
+	public void setId(long id) {
+		this.id = id;
 	}
-	
 	public long getId() {
 		return id;
 	}
@@ -50,5 +41,9 @@ public class PersonDTO implements Serializable {
 	}
 	public void setNameSuffix(String nameSuffix) {
 		this.nameSuffix = nameSuffix;
+	}
+	
+	public String toString(){
+		return "[" + this.id + "," + this.firstName + "," + this.middleName + "," + this.lastName + "," + this.nameSuffix + "]";
 	}
 }

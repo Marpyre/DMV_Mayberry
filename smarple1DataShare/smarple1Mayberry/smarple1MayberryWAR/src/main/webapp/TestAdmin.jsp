@@ -10,7 +10,6 @@
 	<h1>Test Admin</h1>
 	<ul>
 		<li><a href="Admin?command=reset">Reset All Tables</a></li>
-		<li><a href="Admin?command=populate">Populate Tables</a></li>
 	</ul>
 	
 	<%
@@ -23,8 +22,8 @@
 	<br>
 
 	<%-- Back Button --%>
-	<form action="index.html">
-		<input type="submit" value="Back">
+	<form action="logout">
+		<input type="submit" value="Mayberry Home">
 	</form>
 	
 </body>

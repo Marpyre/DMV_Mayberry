@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="smarple1MayberryWAR" basedir="..">
+
+	<property file="test-classes/${ant.project.name}.properties" />
+
+	<loadfile property="dependency-classpath" srcFile="test-classes/dependency-classpath"
+		failonerror="false" />
+
+	<path id="demo.classpath">
+		<pathelement path="test-classes" />
+		<pathelement path="classes" />
+		<fileset dir="." includes="dependency/*.jar" />
+		<pathelement path="${dependency-classpath}" />
+	</path>
+
+	<target name="echo">
+		<property name="demo-classpath" refid="demo.classpath" />
+		<echo>basedir=${basedir}</echo>
+		<echo>demo.classpath=${demo-classpath}</echo>
+	</target>
+
+	<target name="subscriber">
+		<java classname="smarple1MayberryJMS.POIListener" fork="true">
+			<classpath>
+				<path refid="demo.classpath" />
+			</classpath>
+		</java>
+	</target>
+	
+</project>

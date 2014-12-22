@@ -22,8 +22,19 @@
 			<version>${project.version}</version>
 			<type>ejb</type>
 			<exclusions>
-				<!-- server doesn't want to see already provided jars <exclusion> <groupId>org.slf4j</groupId> 
-					<artifactId>slf4j-api</artifactId> </exclusion> -->
+				<!-- server doesn't want to see already provided jars -->
+				<exclusion>
+					<artifactId>commons-logging</artifactId>
+					<groupId>commons-logging</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>xerces</artifactId>
+					<groupId>xercesImpl</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>sun-jaxb</artifactId>
+					<groupId>jaxb-impl</groupId>
+				</exclusion>
 			</exclusions>
 		</dependency>
 		<dependency>

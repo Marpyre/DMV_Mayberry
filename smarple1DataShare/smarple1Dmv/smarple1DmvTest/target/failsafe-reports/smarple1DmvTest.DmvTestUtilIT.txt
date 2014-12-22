@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: smarple1DmvTest.DmvTestUtilIT
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.303 sec - in smarple1DmvTest.DmvTestUtilIT
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.806 sec - in smarple1DmvTest.DmvTestUtilIT

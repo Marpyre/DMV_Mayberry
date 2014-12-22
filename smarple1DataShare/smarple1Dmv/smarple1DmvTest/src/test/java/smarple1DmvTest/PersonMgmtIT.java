@@ -2,8 +2,11 @@ package smarple1DmvTest;
 
 import static org.junit.Assert.assertNotNull;
 
-import javax.naming.InitialContext;
+import java.io.IOException;
+
 import javax.naming.NamingException;
+import javax.xml.bind.JAXBException;
+import javax.xml.stream.XMLStreamException;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -11,70 +14,52 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import smarple1DmvDTO.PersonDTO;
-import smarple1DmvEJB.IPersonMgmtRemote;
 
 public class PersonMgmtIT extends ITBase {
 	private static final Logger logger = LoggerFactory
 			.getLogger(PersonMgmtIT.class);
 
-	private InitialContext jndi;
-
-	private static final String personMgmtJNDI = System.getProperty(
-			"jndi.name.dmvtestutil",
-			"ejb:smarple1DmvEAR/smarple1DmvEJB/PersonMgmtEJB!"
-					+ IPersonMgmtRemote.class.getName());
-
-	private IPersonMgmtRemote personManager;
-
 	@Before
-	public void setUp() throws NamingException {
+	public void setUp() throws JAXBException, XMLStreamException, Exception {
+		super.setUp();
+		
 		assertNotNull("jndi.name.personmgmt not supplied", personMgmtJNDI);
 
 		logger.debug("getting jndi initial context");
-		jndi = new InitialContext();
 		logger.debug("jndi={}", jndi.getEnvironment());
-		jndi.lookup("jms");
-
 		logger.debug("jndi name:{}", personMgmtJNDI);
-
-		personManager = (IPersonMgmtRemote) jndi.lookup(personMgmtJNDI);
 		logger.debug("personManager={}", personManager);
 	}
 
 	@Test
-	public void testPing() throws NamingException {
+	public void testPing() throws NamingException, IOException {
 		logger.info("*** testPing ***");
-
+		runAs(knownHandler);
 		personManager.ping();
 	}
 
 	@Test
-	public void testGetPerson() throws NamingException {
-		logger.info("*** testGetPerson ***");
-
-		personManager.getPerson();
-	}
-
-	@Test
-	public void testGetPersonByName() throws NamingException {
+	public void testGetPersonByName() throws NamingException, IOException {
 		logger.info("*** testGetPersonByName ***");
-
+		runAs(sysMayberryHandler);
 		personManager.getPersonByName("Joss");
 	}
 
 	@Test
-	public void testPersonLogic() throws NamingException {
+	public void testPersonLogic() throws NamingException, IOException {
 		logger.info("*** person logic ***");
 
+		runAs(kathyHandler);
+		
 		PersonDTO person = new PersonDTO();
 		person.setFirstName("Bob");
 		person.setMiddleName("Bob");
 		person.setLastName("Bob");
 		person.setNameSuffix("Mr.");
 
-		personManager.addPerson(person);
+		long bobId = personManager.addPerson(person);
 
-		PersonDTO personBob = personManager.getPersonByName("Bob");
+		PersonDTO personBob = personManager.getPerson(bobId);
 
 		assert (personBob.getLastName().equals("Bob"));
 	}

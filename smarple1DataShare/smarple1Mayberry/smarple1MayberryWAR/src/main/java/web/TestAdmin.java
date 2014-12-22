@@ -2,6 +2,7 @@ package web;
 
 import java.io.IOException;
 
+import javax.naming.InitialContext;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,74 +13,71 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-@WebServlet("/Admin/*")
+import smarple1MayberryEJB.POIRemote;
+
+@WebServlet(urlPatterns = { "/Admin/*", "/admin/*" })
 public class TestAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
 	private static final Log log = LogFactory.getLog(TestAdmin.class);
 	public static final String COMMAND_PARAM = "command";
 
-	// private InitialContext jndi;
-	//
-	// private static final String dmvTestUtilJDNI = System.getProperty(
-	// "jndi.name.dmvtestutil",
-	// "ejb:smarple1DmvEAR/smarple1DmvEJB/DmvTestUtilEJB!"
-	// + IDmvTestUtilRemote.class.getName());
-	//
-	// private IDmvTestUtilRemote testUtilInterface;
+	// Mayberry EJB Interface
+	protected POIRemote poiInterface;
 
-    /**
-     * Default constructor. 
-     */
-    public TestAdmin() {
-        super();
-    }
+	// Mayberry EJB JNDI
+	protected static final String poiJNDI = "ejb:/smarple1Mayberry/PoiEJB!smarple1MayberryEJB.POIRemote";
+
+	protected InitialContext jndi;
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * Default constructor.
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public TestAdmin() {
+		super();
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		log.debug("doGet() called");
 
 		String command = request.getParameter(COMMAND_PARAM);
 		log.debug("command=" + command);
 
 		try {
-//			jndi = new InitialContext();
-//
-//			jndi.lookup("jms");
-//
-//			testUtilInterface = (IDmvTestUtilRemote) jndi
-//					.lookup(dmvTestUtilJDNI);
+
+			jndi = new InitialContext();
+
+			jndi.lookup("jms");
+
+			poiInterface = (POIRemote) jndi.lookup(poiJNDI);
 
 			if (command == null) {
 
 				request.setAttribute("msg", "");
 
-			} else if (command.equals("populate")) {
-
-//				testUtilInterface.populate();
-				
-				request.setAttribute("msg", "Populate Complete");
-
 			} else if (command.equals("reset")) {
 
-//				testUtilInterface.resetAll();
-				
+				poiInterface.resetDB();
+
 				request.setAttribute("msg", "Reset Complete");
 
 			} else {
 				throw new Exception("Illegal Action Specified.");
 			}
-			
+
 			RequestDispatcher dispatcher = getServletContext()
 					.getRequestDispatcher("/TestAdmin.jsp");
 			dispatcher.forward(request, response);
-			
+
 		} catch (Exception ex) {
-			
-			request.setAttribute("errorMsg", ex.getMessage());
-			
+
+			request.setAttribute("errorMsg", ex.getMessage() + "Error");
+
 			RequestDispatcher dispatcher = getServletContext()
 					.getRequestDispatcher("/error.jsp");
 			dispatcher.forward(request, response);
